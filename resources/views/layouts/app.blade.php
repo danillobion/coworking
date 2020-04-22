@@ -32,10 +32,9 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
+                      <a class="nav-link" href="{{ route('projects') }}">{{ __('Projetos') }}</a>
+                      <a class="nav-link" href="{{ route('news') }}">{{ __('News') }}</a>
+                      <a class="nav-link" href="{{ route('login') }}">{{ __('Contato') }}</a>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -53,7 +52,6 @@
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -71,7 +69,29 @@
                 </div>
             </div>
         </nav>
-
+        @guest
+        <!-- nada -->
+        @else
+        <nav class="navbar navbar-expand-lg" style="background-color:gray">
+          <a class="navbar-brand" style="color:white;">ADMINISTRADOR</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="{{ route('config_home') }}">Página Inicial <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('config_project') }}">Projetos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('config_news') }}">News</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        @endguest
         <main class="py-4">
             @yield('content')
         </main>

@@ -17,10 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
+//logado
+Route::get('/home', 'HomeController@index')->name('config_home');
+Route::get('/config.project', 'HomeController@projects')->name('config_project');
+Route::get('/config.news', 'HomeController@news')->name('config_news');
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+//nao logado
+Route::get('/projetos', function(){return view('project');})->name('projects');
+Route::get('/news', function(){return view('news');})->name('news');

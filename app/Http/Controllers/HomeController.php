@@ -23,6 +23,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('config/config_home');
+    }
+    public function projects()
+    {
+        return view('config/config_project');
+    }
+    public function news()
+    {
+        return view('config/config_news');
     }
 }
