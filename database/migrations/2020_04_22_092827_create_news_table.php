@@ -18,6 +18,8 @@ class CreateNewsTable extends Migration
             $table->string('titulo');
             $table->string('conteudo');
             $table->integer('visualizacao');
+            $table->boolean('destaque');
+            $table->string("imagemCapa")->nullable();
             $table->timestamps();
 
             $table->bigInteger("user_id")->nullable();

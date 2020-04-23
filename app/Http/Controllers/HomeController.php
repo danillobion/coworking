@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Project;
+use App\News;
 
 class HomeController extends Controller
 {
@@ -27,10 +29,12 @@ class HomeController extends Controller
     }
     public function projects()
     {
-        return view('config/config_project');
+        $resultado = Project::get();
+        return view('config/config_project' , ['allProject'=>$resultado]);
     }
     public function news()
     {
-        return view('config/config_news');
+        $resultado = News::get();
+        return view('config/config_news' , ['allNews'=>$resultado]);
     }
 }
