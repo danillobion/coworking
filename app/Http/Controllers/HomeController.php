@@ -29,12 +29,12 @@ class HomeController extends Controller
     }
     public function projects()
     {
-        $resultado = Project::get();
+        $resultado = Project::orderBy("created_at", "desc")->get();
         return view('config/config_project' , ['allProject'=>$resultado]);
     }
     public function news()
     {
-        $resultado = News::get();
+        $resultado = News::orderBy("created_at", "desc")->get();
         return view('config/config_news' , ['allNews'=>$resultado]);
     }
 }
