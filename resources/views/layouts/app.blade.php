@@ -34,9 +34,9 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                      <a class="nav-link" href="{{ route('projects') }}">{{ __('Projetos') }}</a>
-                      <a class="nav-link" href="{{ route('news') }}">{{ __('News') }}</a>
-                      <a class="nav-link" href="{{ route('login') }}">{{ __('Contato') }}</a>
+                      <a class="nav-link" href="{{ route('all_project') }}">{{ __('Projetos') }}</a>
+                      <a class="nav-link" href="{{ route('all_news') }}">{{ __('News') }}</a>
+                      <a class="nav-link" href="#">{{ __('Contato') }}</a>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -94,9 +94,10 @@
           </div>
         </nav>
         @endguest
-        <main class="py-4">
+        <div style="padding-top: 2rem; margin-bottom: 20px;">
             @yield('content')
-        </main>
+        </div>
+        <div style="background-color:pink; width:100%; bottom: 0;">rodapé</div>
     </div>
 </body>
 </html>

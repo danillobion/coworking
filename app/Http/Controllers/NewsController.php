@@ -7,11 +7,11 @@ use Auth;
 use App\News;
 use Intervention\Image\ImageManagerStatic as Image;
 use \Crypt;
+use DB;
 
 class NewsController extends Controller
 {
-    public function addNews(Request $request)
-    {
+    public function addNews(Request $request){
       $imagemCapa = "";
       if($request->hasFile('imagemCapa') && $request->file('imagemCapa')->isValid()) {
           $ext = strtolower(request()->imagemCapa->getClientOriginalExtension());
@@ -39,8 +39,7 @@ class NewsController extends Controller
 
       return redirect()->route('config_news');
     }
-    public function editNews(Request $request)
-    {
+    public function editNews(Request $request){
       $imagemCapa = "";
       if($request->hasFile('imagemCapa') && $request->file('imagemCapa')->isValid()) {
           $ext = strtolower(request()->imagemCapa->getClientOriginalExtension());
@@ -78,5 +77,19 @@ class NewsController extends Controller
         $resultado = News::where('id','ilike',$request->idNews)->delete();
       }
       return redirect()->route('config_news');
+    }
+    public function allNews(){
+      $resultado = News::orderBy('created_at', 'desc')->get();
+      return view('news', ['allNews' => $resultado]);
+    }
+    public function showNews(Request $request){
+      $resultado = News::get();
+      //atualizar o numero de views
+      if(Auth::user() == null){
+        DB::table('news')->where('id','=',$request->idNews)->increment('visualizacao',1);
+      }
+      //mostrar news
+      $resultado = News::where('id','=',$request->idNews)->first();
+      return view('newsDetail', ['newsDetail' => $resultado,]);
     }
 }

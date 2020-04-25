@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 use Auth;
 use App\Project;
+use DB;
 
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
 use \Crypt;
 class ProjectController extends Controller
 {
-  public function addProject(Request $request)
-  {
+  public function addProject(Request $request){
       // dd($request);
       $imagemCapa = "";
       if($request->hasFile('imagemCapa') && $request->file('imagemCapa')->isValid()) {
@@ -79,5 +79,19 @@ class ProjectController extends Controller
       $resultado = Project::where('id','ilike',$request->idProjeto)->delete();
     }
     return redirect()->route('config_project');
+  }
+  public function allProject(){
+    $resultado = Project::orderBy('created_at', 'desc')->get();
+    return view('project', ['allProject' => $resultado]);
+  }
+  public function showProject(Request $request){
+
+    //atualizar o numero de views
+    if(Auth::user() == null){
+      DB::table('projects')->where('id','=',$request->idProject)->increment('visualizacao',1);
+    }
+    //mostrar projeto
+    $resultado = Project::where('id','=',$request->idProject)->first();
+    return view('projectDetail', ['projectDetail' => $resultado,]);
   }
 }
