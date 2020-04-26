@@ -1,0 +1,90 @@
+/* MENU */
+.menuPrincipal{
+  background-color: #1d1d1d;
+  text-align:center;
+}
+.menuSecundario{
+  background-color: #2abf9a;
+  text-align:center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.menuPrincipal_tagA{
+  color:black;
+  font-family: arial;
+  font-size: 17px;
+  text-decoration: none;
+}
+.menuPrincipal_tagA:hover{
+  color:white;
+  font-family: arial;
+  font-size: 17px;
+  text-decoration: none;
+}
+.menuTerciario{
+  color:white;
+  font-family: arial;
+  font-size: 17px;
+  text-decoration: none;
+  background-color:gray;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.titulo{
+  color:#2bc09a;
+  font-weight:bold;
+  font-family: arial;
+  font-size: 19px;
+}
+.titulo2{
+  color:#2bc09a;
+  font-weight:bold;
+  font-family: arial;
+  font-size: 24px;
+}
+.titulo_card{
+  width:100%; font-family: 'Oswald', sans-serif;
+  font-size: 22px;
+  margin-bottom: -5px;
+}
+.subtitulo_card{
+  width:100%; font-family: arial;
+  color:#2bc09a;
+  text-align:justify;
+  font-weight: bold;
+}
+.detalhe_card{
+  width:100%; font-family: arial;
+  text-align:justify;
+}
+.paragrafo{
+  color:#848484;
+  font-family: arial;
+  font-size: 17px;
+}
+.paragrafo_tipo2{
+  text-align: justify;;
+}
+/*x MENU x*/
+
+/* RODAPE */
+.rodape{
+  background-color:#1d1d1d;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+/* x RODAPE x */
+
+/* PAGINA INICIAL */
+.titulo_projeto{
+  font-family: arial;
+  font-size: 19px;
+  font-weight:bold;
+
+}
+
+/*x PAGINA INICIAL x*/
+
+/* PAGINA PROJETO */
+
+/*x PAGINA PROJETO x*/

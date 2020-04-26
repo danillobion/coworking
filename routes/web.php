@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Auth::routes();
 //logado
-Route::get('/home', 'HomeController@index')->name('config_home');
+Route::get('/config.home', 'HomeController@index')->name('config_home');
   //project
 Route::get('/config.project', 'HomeController@projects')->name('config_project');
 Route::post('/add.project', 'ProjectController@addProject')->name('add_project');
@@ -33,6 +33,7 @@ Route::post('/edit.news', 'NewsController@editNews')->name('edit_news');
 Route::post('/delete.news', 'NewsController@deleteNews')->name('delete_news');
 
 //nao logado
+Route::get('/home', function(){return view('welcome');})->name('home');
   //project
 Route::get('/all.project', 'ProjectController@allProject')->name('all_project');
 Route::post('/show.project', 'ProjectController@showProject')->name('show_project');
