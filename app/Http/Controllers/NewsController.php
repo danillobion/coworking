@@ -83,6 +83,7 @@ class NewsController extends Controller
       return view('news', ['allNews' => $resultado]);
     }
     public function showNews(Request $request){
+      // dd($request);
       $resultado = News::get();
       //atualizar o numero de views
       if(Auth::user() == null){
@@ -90,6 +91,6 @@ class NewsController extends Controller
       }
       //mostrar news
       $resultado = News::where('id','=',$request->idNews)->first();
-      return view('newsDetail', ['newsDetail' => $resultado,]);
+      return view('newsDetail', ['newsDetail' => $resultado]);
     }
 }

@@ -45,7 +45,6 @@
 .titulo_card{
   width:100%; font-family: 'Oswald', sans-serif;
   font-size: 22px;
-  margin-bottom: -5px;
 }
 .subtitulo_card{
   width:100%; font-family: arial;
@@ -80,7 +79,6 @@
   font-family: arial;
   font-size: 19px;
   font-weight:bold;
-
 }
 
 /*x PAGINA INICIAL x*/
