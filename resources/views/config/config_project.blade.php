@@ -11,15 +11,40 @@
                   <form id="idForm" method="post" enctype="multipart/form-data">
                     @csrf
                       <label>Titulo<a style="color:red;">*</a></label>
-                      <input class="form-control" type="text" id="idTitulo" name="titulo" value="">
+                      <input class="form-control @error('titulo') is-invalid @enderror form-control" type="text" id="idTitulo" name="titulo" value="{{ old('titulo') }}">
+                      @error('titulo')
+                        <div >
+                          <a style="color:red;">{{ $message }}</a>
+                        </div>
+                      @enderror
                       <label>Tipo<a style="color:red;">*</a></label>
-                      <input class="form-control" type="text" id="idTipo" name="tipo" value="">
+                      <input class="form-control @error('tipo') is-invalid @enderror form-control" type="text" id="idTipo" name="tipo" value="{{ old('tipo') }}">
+                      @error('tipo')
+                        <div >
+                          <a style="color:red;">{{ $message }}</a>
+                        </div>
+                      @enderror
                       <label>Coordenador<a style="color:red;">*</a></label>
-                      <input class="form-control" type="text" id="idCoordenador" name="coordenador" value="">
+                      <input class="form-control @error('coordenador') is-invalid @enderror form-control" type="text" id="idCoordenador" name="coordenador" value="{{ old('coordenador') }}">
+                      @error('coordenador')
+                        <div >
+                          <a style="color:red;">{{ $message }}</a>
+                        </div>
+                      @enderror
                       <label>Descricao<a style="color:red;">*</a></label>
-                      <textarea class="form-control" rows="10" type="text" id="idDescricao" name="descricao" value=""></textarea>
-                      <label>Imagem</label>
-                      <input type="file" class="form-control-file" id="imagemCapa" name="imagemCapa" placeholder="Selecione um arquivo" />
+                      <textarea class="form-control @error('descricao') is-invalid @enderror form-control" rows="10" type="text" id="idDescricao" name="descricao">{{ old('descricao') }}</textarea>
+                      @error('descricao')
+                        <div >
+                          <a style="color:red;">{{ $message }}</a>
+                        </div>
+                      @enderror
+                      <label>Imagem<a style="color:red;">*</a></label>
+                      <input type="file" class="form-control-file @error('imagemCapa') is-invalid @enderror form-control" id="imagemCapa" name="imagemCapa" value="{{ old('imagemCapa') }}" placeholder="Selecione um arquivo" />
+                      @error('imagemCapa')
+                        <div >
+                          <a style="color:red;">{{ $message }}</a>
+                        </div>
+                      @enderror
                       <input type="hidden" id="idTemp" name="id" value=-1>
                       <button class="btn btn-primary" id="botaoSalvarAtualizar" type="button" onclick="salvar(-1)">Salvar</button>
                       <button class="btn btn-secondary" type="button" onclick="limpar()">Limpar</button>

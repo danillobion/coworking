@@ -36,7 +36,7 @@ Route::post('/delete.news', 'NewsController@deleteNews')->name('delete_news');
 Route::get('/home', function(){return view('welcome');})->name('home');
   //project
 Route::get('/all.project', 'ProjectController@allProject')->name('all_project');
-Route::post('/show.project', 'ProjectController@showProject')->name('show_project');
+Route::get('/show.project', 'ProjectController@showProject')->name('show_project');
   //news
 Route::get('/all.news', 'NewsController@allNews')->name('all_news');
-Route::post('/show.news', 'NewsController@showNews')->name('show_news');
+Route::get('/show.news', 'NewsController@showNews')->name('show_news');

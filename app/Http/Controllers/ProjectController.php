@@ -11,7 +11,16 @@ use \Crypt;
 class ProjectController extends Controller
 {
   public function addProject(Request $request){
-      // dd($request);
+    // dd($request->imagemCapa);
+
+      $this->validate($request,[
+          'titulo'                => 'required|min:3|max:1000',
+          'tipo'                  => 'required|string|min:3|max:255',
+          'coordenador'           => 'required|string|min:3|max:255',
+          'descricao'             => 'required|min:3|max:10000',
+          'imagemCapa'            => 'required',
+      ]);
+
       $imagemCapa = "";
       if($request->hasFile('imagemCapa') && $request->file('imagemCapa')->isValid()) {
           $ext = strtolower(request()->imagemCapa->getClientOriginalExtension());
@@ -26,22 +35,31 @@ class ProjectController extends Controller
               $image = Image::make(request()->imagemCapa->path());
               $image->fit(120, 120)->save($thumbPath);
           }
+          Project::create([
+            'titulo'           => $request->titulo,
+            'conteudo'         => $request->descricao,
+            'tipo'             => $request->tipo,
+            'coordenador'      => $request->coordenador,
+            'visualizacao'     => '0',
+            'user_id'          => Auth::user()->id,
+            'imagemCapa'       => $imagemCapa,
+          ]);
+
+          return redirect()->route('config_project');
+      }else{
+        return redirect()->route('config_project');
       }
 
-      Project::create([
-        'titulo'           => $request->titulo,
-        'conteudo'         => $request->descricao,
-        'tipo'             => $request->tipo,
-        'coordenador'      => $request->coordenador,
-        'visualizacao'     => '0',
-        'user_id'          => Auth::user()->id,
-        'imagemCapa'       => $imagemCapa,
-      ]);
-
-      return redirect()->route('config_project');
   }
   public function editProject(Request $request){
     // dd($request);
+    $this->validate($request,[
+        'titulo'                => 'required|min:3|max:1000',
+        'tipo'                  => 'required|string|min:3|max:255',
+        'coordenador'           => 'required|string|min:3|max:255',
+        'descricao'             => 'required|min:3|max:10000',
+        'imagemCapa'            => 'required',
+    ]);
     $imagemCapa = "";
     if($request->hasFile('imagemCapa') && $request->file('imagemCapa')->isValid()) {
         $ext = strtolower(request()->imagemCapa->getClientOriginalExtension());
