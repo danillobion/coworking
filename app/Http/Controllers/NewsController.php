@@ -42,9 +42,9 @@ class NewsController extends Controller
             'imagemCapa'       => $imagemCapa,
           ]);
 
-          return redirect()->route('config_news');
+          return redirect()->route('config_news')->with('sucesso', 'News cadastrada com sucesso!');
       }else{
-        return redirect()->route('config_news');
+        return redirect()->route('config_news')->with('atencao', 'Verifique os campos e tente novamente!');;
       }
 
     }
@@ -75,7 +75,7 @@ class NewsController extends Controller
         ->update(['titulo' => $request->titulo, 'conteudo' => $request->descricao, 'destaque' => $request->customRadio,]);
       }
 
-      return redirect()->route('config_news');
+      return redirect()->route('config_news')->with('sucesso', 'News atualizada com sucesso!');
     }
     public function deleteNews(Request $request){
       $nomeimagem = News::where('id','=',$request->idNews)->first()->imagemCapa;

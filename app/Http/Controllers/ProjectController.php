@@ -45,9 +45,9 @@ class ProjectController extends Controller
             'imagemCapa'       => $imagemCapa,
           ]);
 
-          return redirect()->route('config_project');
+          return redirect()->route('config_project')->with('sucesso', 'Projeto cadastrado com sucesso!');
       }else{
-        return redirect()->route('config_project');
+        return redirect()->route('config_project')->with('atencao', 'Verifique os campos e tente novamente!');
       }
 
   }
@@ -85,7 +85,7 @@ class ProjectController extends Controller
       ->update(['titulo' => $request->titulo, 'conteudo' => $request->descricao,  'coordenador' => $request->coordenador, 'tipo' => $request->tipo,]);
     }
 
-    return redirect()->route('config_project');
+    return redirect()->route('config_project')->with('sucesso', 'Projeto atualizado com sucesso!');
   }
   public function deleteProject(Request $request){
     $nomeimagem = Project::where('id','=',$request->idProjeto)->first()->imagemCapa;
