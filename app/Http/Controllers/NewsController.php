@@ -12,6 +12,13 @@ use DB;
 class NewsController extends Controller
 {
     public function addNews(Request $request){
+
+      $this->validate($request,[
+          'titulo'                => 'required|min:3|max:1000',
+          'descricao'             => 'required|min:3|max:10000',
+          'imagemCapa'            => 'required',
+      ]);
+
       $imagemCapa = "";
       if($request->hasFile('imagemCapa') && $request->file('imagemCapa')->isValid()) {
           $ext = strtolower(request()->imagemCapa->getClientOriginalExtension());
@@ -26,18 +33,20 @@ class NewsController extends Controller
               $image = Image::make(request()->imagemCapa->path());
               $image->fit(120, 120)->save($thumbPath);
           }
+          News::create([
+            'titulo'           => $request->titulo,
+            'conteudo'         => $request->descricao,
+            'visualizacao'     => '0',
+            'destaque'         => $request->customRadio,
+            'user_id'          => Auth::user()->id,
+            'imagemCapa'       => $imagemCapa,
+          ]);
+
+          return redirect()->route('config_news');
+      }else{
+        return redirect()->route('config_news');
       }
 
-      News::create([
-        'titulo'           => $request->titulo,
-        'conteudo'         => $request->descricao,
-        'visualizacao'     => '0',
-        'destaque'         => $request->customRadio,
-        'user_id'          => Auth::user()->id,
-        'imagemCapa'       => $imagemCapa,
-      ]);
-
-      return redirect()->route('config_news');
     }
     public function editNews(Request $request){
       $imagemCapa = "";

@@ -11,9 +11,19 @@
                   <form id="idForm" method="post" enctype="multipart/form-data">
                     @csrf
                       <label>Titulo<a style="color:red;">*</a></label>
-                      <input class="form-control" type="text" id="idTitulo" name="titulo" value="">
+                      <input class="form-control @error('titulo') is-invalid @enderror form-control" type="text" id="idTitulo" name="titulo" value="{{ old('titulo') }}">
+                      @error('titulo')
+                        <div >
+                          <a style="color:red;">{{ $message }}</a>
+                        </div>
+                      @enderror
                       <label>Descricao<a style="color:red;">*</a></label>
-                      <textarea class="form-control" rows="10" type="text" id="idDescricao" name="descricao" value=""></textarea>
+                      <textarea class="form-control @error('descricao') is-invalid @enderror form-control" rows="10" type="text" id="idDescricao" name="descricao">{{ old('descricao') }}</textarea>
+                      @error('descricao')
+                        <div >
+                          <a style="color:red;">{{ $message }}</a>
+                        </div>
+                      @enderror
                       <label>Destaque<a style="color:red;">*</a></label>
                       <!-- <input class="form-control" type="text" id="idCoordenador" name="coordenador" value=""> -->
                       <div class="custom-control custom-radio">
@@ -25,7 +35,12 @@
                         <label class="custom-control-label" for="customRadio2">Não.</label>
                       </div>
                       <label>Imagem</label>
-                      <input type="file" class="form-control-file" id="imagemCapa" name="imagemCapa" placeholder="Selecione um arquivo" />
+                      <input type="file" class="form-control-file @error('imagemCapa') is-invalid @enderror form-control" id="imagemCapa" name="imagemCapa" value="{{ old('imagemCapa') }}" placeholder="Selecione um arquivo" />
+                      @error('imagemCapa')
+                        <div >
+                          <a style="color:red;">{{ $message }}</a>
+                        </div>
+                      @enderror
                       <input type="hidden" id="idTemp" name="id" value=-1>
                       <button class="btn btn-primary" id="botaoSalvarAtualizar" type="button" onclick="salvar(-1)">Salvar</button>
                       <button class="btn btn-secondary" type="button" onclick="limpar()">Limpar</button>
