@@ -99,7 +99,7 @@ class ProjectController extends Controller
     return redirect()->route('config_project');
   }
   public function allProject(){
-    $resultado = Project::orderBy('created_at', 'desc')->get();
+    $resultado = Project::orderBy('created_at', 'desc')->paginate(10);
     return view('project', ['allProject' => $resultado]);
   }
   public function showProject(Request $request){

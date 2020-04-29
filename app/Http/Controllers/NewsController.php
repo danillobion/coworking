@@ -88,7 +88,7 @@ class NewsController extends Controller
       return redirect()->route('config_news');
     }
     public function allNews(){
-      $resultado = News::orderBy('created_at', 'desc')->get();
+      $resultado = News::orderBy('created_at', 'desc')->paginate(10);
       return view('news', ['allNews' => $resultado]);
     }
     public function showNews(Request $request){
