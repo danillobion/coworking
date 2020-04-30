@@ -40,3 +40,4 @@ Route::get('/show.project', 'ProjectController@showProject')->name('show_project
   //news
 Route::get('/all.news', 'NewsController@allNews')->name('all_news');
 Route::get('/show.news', 'NewsController@showNews')->name('show_news');
+Route::get('/destaque.news', 'NewsController@destaqueNews')->name('destaque_news');

@@ -2,8 +2,62 @@
 
 @section('content')
 <div class="container">
+  <div class="row justify-content-center">
+      <div class="col-md-8 titulo2" style="margin-bottom:1rem;">News</div>
+  </div>
+</div>
+@if(isset($destaqueNews->destaque) == 1)
+  <div style="background-color:#2abf9a; margin-bottom:2rem; padding-bottom:2rem;">
+    <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="row justify-content-center">
+              <div class="col-md-12">
+                <a class="btn" href="{{ route('show_news', ['idNews'=>$destaqueNews->id,]) }}" style="padding-left: 0rem; ">
+                  @if(strlen($destaqueNews->titulo) > 60)
+                    <?php $detaa = substr($item->titulo, 0, 60) ?>
+                    <div class="titulo_card" style="text-align:left; font-size:30px">{{$detaa}}...</div>
+                  @else
+                    <div class="titulo_card" style="text-align:left; font-size:30px">{{$destaqueNews->titulo}}</div>
+                  @endif
+                </a>
+              </div>
+              <div class="col-md-4">
+                @if(isset($destaqueNews->imagemCapa) && $destaqueNews->imagemCapa!="")
+                  <td><img src="{{asset('storage/imagens/news/' . $destaqueNews->imagemCapa)}}" alt="..." style="border-radius: 15px; width:220px"></td>
+                @endif
+              </div>
+              <div class="col-md-8">
+                <div class="col-md-12">
+                  <div class="row" style="margin-left:-15px; margin-right:-15px;">
+                    <?php
+                      $dataehora = explode(" ", $destaqueNews->created_at);
+                      $data = $dataehora[0];
+                    ?>
+                    <div class="col-sm-3 subtitulo_card" style="color:black">{{$data}}</div>
+                    <div class="col-sm-1 subtitulo_card" style="color:black">{{$destaqueNews->visualizacao}}</div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="row" style="margin-left:-15px; margin-right:-15px;">
+                    @if(strlen($destaqueNews->conteudo) > 150)
+                      <?php $deta = substr($item->conteudo, 0, 150) ?>
+                      <div class="col-md-12 detalhe_card">{{$deta}}...</div>
+                    @else
+                      <div class="col-md-12 detalhe_card">{{$destaqueNews->conteudo}}</div>
+                    @endif
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+@endif
+
+<div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-8 titulo2" style="margin-bottom:1rem">News</div>
       <div class="col-md-8" style="margin-bottom:1rem;">
         @foreach ($allNews as $item)
         <ul class="list-group" style="margin-bottom:1rem;">

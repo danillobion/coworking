@@ -89,7 +89,8 @@ class NewsController extends Controller
     }
     public function allNews(){
       $resultado = News::orderBy('created_at', 'desc')->paginate(10);
-      return view('news', ['allNews' => $resultado]);
+      $resultadoDestaque = News::where('destaque','=',true)->first();
+      return view('news', ['allNews' => $resultado, 'destaqueNews'=>$resultadoDestaque]);
     }
     public function showNews(Request $request){
       // dd($request);
@@ -101,5 +102,17 @@ class NewsController extends Controller
       //mostrar news
       $resultado = News::where('id','=',$request->idNews)->first();
       return view('newsDetail', ['newsDetail' => $resultado]);
+    }
+    public function destaqueNews(Request $request){
+      if($request->value == 0){
+        //verifica se tem algum true e entao muda para false
+        News::where('destaque','=',true)->update(['destaque'=>false]);
+        //alterar uma news especifica para true
+        News::where('id','=',$request->idNews)->update(['destaque'=>true]);
+      }else{
+        //alterar uma news especifica para false
+        News::where('id','=',$request->idNews)->update(['destaque'=>false]);
+      }
+      return redirect()->route('config_news')->with('sucesso', 'News atualizada com sucesso!');
     }
 }
