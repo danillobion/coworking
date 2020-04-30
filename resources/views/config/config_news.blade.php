@@ -76,9 +76,9 @@
                         <td>{{$item->visualizacao}}</td>
                         <td>dd/mm/aaaa</td>
                         @if($item->destaque == 0)
-                          <td>NÃO</td>
+                          <td><a class="btn btn-secondary btn-sm" href="{{ route('destaque_news', ['idNews'=>$item->id, 'value'=>0]) }}">NÃO</td>
                         @else
-                          <td>SIM</td>
+                          <td><a class="btn btn-primary btn-sm" href="{{ route('destaque_news', ['idNews'=>$item->id, 'value'=>1]) }}">SIM</td>
                         @endif
                         <td>???</td>
                         <td>

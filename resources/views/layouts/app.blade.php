@@ -76,6 +76,10 @@
                 @endguest
             </div>
         </nav>
+        <div id="app" style="margin:2rem; text-align:center;">
+          @include('flash-message')
+          @yield('contente')
+        </div>
         <div style="padding-top: 2rem; ">
             @yield('content')
         </div>

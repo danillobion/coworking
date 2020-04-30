@@ -51,6 +51,11 @@
           </form>
           @endforeach
         </div>
+        <div class="col-md-12" style="margin-bottom:2rem;">
+          <div class="row justify-content-center">
+            <span>{{$allProject->links()}}</span>
+          </div>
+        </div>
     </div>
 </div>
 <script type="application/javascript">
