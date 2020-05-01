@@ -104,12 +104,14 @@
 <script type="application/javascript">
   function ver($item){
     document.getElementById("idTitulo").value = $item.titulo;
-    document.getElementById("idDescricao").value = $item.conteudo;
+    // document.getElementById("idDescricao").value = $item.conteudo;
+    tinymce.get("idDescricao").setContent($item.conteudo);
     document.getElementById("idTipo").value = $item.tipo;
     document.getElementById("idCoordenador").value = $item.coordenador;
 
     document.getElementById("idTitulo").disabled = true;
-    document.getElementById("idDescricao").disabled = true;
+    // document.getElementById("idDescricao").disabled = true;
+    tinymce.get("idDescricao").setMode('readonly');
     document.getElementById("idTipo").disabled = true;
     document.getElementById("idCoordenador").disabled = true;
 
@@ -119,12 +121,14 @@
   function editar($item){
     document.getElementById("idTemp").value = $item.id;
     document.getElementById("idTitulo").value = $item.titulo;
-    document.getElementById("idDescricao").value = $item.conteudo;
+    // document.getElementById("idDescricao").value = $item.conteudo;
+    tinymce.get("idDescricao").setContent($item.conteudo);
     document.getElementById("idTipo").value = $item.tipo;
     document.getElementById("idCoordenador").value = $item.coordenador;
 
     document.getElementById("idTitulo").disabled = false;
-    document.getElementById("idDescricao").disabled = false;
+    // document.getElementById("idDescricao").disabled = false;
+    tinymce.get("idDescricao").setMode('design');
     document.getElementById("idTipo").disabled = false;
     document.getElementById("idCoordenador").disabled = false;
   }
@@ -142,12 +146,14 @@
   function limpar(){
     document.getElementById("idTemp").value =-1;
     document.getElementById("idTitulo").value = '';
-    document.getElementById("idDescricao").value = '';
+    // document.getElementById("idDescricao").value = '';
+    tinymce.get("idDescricao").setContent("");
     document.getElementById("idTipo").value = '';
     document.getElementById("idCoordenador").value = '';
 
     document.getElementById("idTitulo").disabled = false;
-    document.getElementById("idDescricao").disabled = false;
+    // document.getElementById("idDescricao").disabled = false;
+    tinymce.get("idDescricao").setMode('design');
     document.getElementById("idTipo").disabled = false;
     document.getElementById("idCoordenador").disabled = false;
 

@@ -105,7 +105,8 @@
 <script type="application/javascript">
   function ver($item){
     document.getElementById("idTitulo").value = $item.titulo;
-    document.getElementById("idDescricao").value = $item.conteudo;
+    // document.getElementById("idDescricao").value = $item.conteudo;
+    tinymce.get("idDescricao").setContent($item.conteudo);
 
     if($item.destaque == true){
       document.getElementById("customRadio1").checked = true;
@@ -116,15 +117,16 @@
     }
 
     document.getElementById("idTitulo").disabled = true;
-    document.getElementById("idDescricao").disabled = true;
+    // document.getElementById("idDescricao").disabled = true;
+    tinymce.get("idDescricao").setMode('readonly');
     document.getElementById("customRadio1").disabled = true;
     document.getElementById("customRadio2").disabled = true;
   }
   function editar($item){
-    console.log($item.id);
     document.getElementById("idTemp").value = $item.id;
     document.getElementById("idTitulo").value = $item.titulo;
-    document.getElementById("idDescricao").value = $item.conteudo;
+    // document.getElementById("idDescricao").value = $item.conteudo;
+    tinymce.get("idDescricao").setContent($item.conteudo);
     if($item.destaque == true){
       document.getElementById("customRadio1").checked = true;
       document.getElementById("customRadio2").checked = false;
@@ -136,7 +138,8 @@
     // console.log($item.imagemCapa);
 
     document.getElementById("idTitulo").disabled = false;
-    document.getElementById("idDescricao").disabled = false;
+    // document.getElementById("idDescricao").disabled = false;
+    tinymce.get("idDescricao").setMode('design');
     document.getElementById("customRadio1").disabled = false;
     document.getElementById("customRadio2").disabled = false;
   }
@@ -154,10 +157,12 @@
   function limpar(){
     document.getElementById("idTemp").value =-1;
     document.getElementById("idTitulo").value = '';
-    document.getElementById("idDescricao").value = '';
+    // document.getElementById("idDescricao").value = '';
+    tinymce.get("idDescricao").setContent("");
 
     document.getElementById("idTitulo").disabled = false;
-    document.getElementById("idDescricao").disabled = false;
+    // document.getElementById("idDescricao").disabled = false;
+    tinymce.get("idDescricao").setMode('design');
 
     document.getElementById("idForm").action = "{{route('add_news')}}";
 

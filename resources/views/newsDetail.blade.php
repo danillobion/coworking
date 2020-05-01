@@ -17,13 +17,8 @@
               <div class="col-md-1 titulo2" style="font-size:15px;">{{$newsDetail->visualizacao}}</div>
             </div>
           </div>
-          <?php
-            $texto = explode("<br />", nl2br("$newsDetail->conteudo"));
-          ?>
           <label class="col-md-7 detalhe_card">
-            @foreach ($texto as $paragrafo)
-              <p>{{$paragrafo}}</p>
-            @endforeach
+              <p>{!! $newsDetail->conteudo !!}</p>
           </label>
           <div class="col-md-5" style="text-align:left">
             @if(isset($newsDetail->imagemCapa) && $newsDetail->imagemCapa!="")

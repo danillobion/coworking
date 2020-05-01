@@ -41,10 +41,14 @@
                 <div class="col-md-12">
                   <div class="row" style="margin-left:-15px; margin-right:-15px;">
                     @if(strlen($destaqueNews->conteudo) > 150)
-                      <?php $deta = substr($item->conteudo, 0, 150) ?>
-                      <div class="col-md-12 detalhe_card">{{$deta}}...</div>
+                      <?php
+                          $text1 = strip_tags($destaqueNews->conteudo);
+                          $deta = substr($text1, 0, 150);
+                      ?>
+                      <div class="col-md-12 detalhe_card">{!! $deta !!}...</div>
                     @else
-                      <div class="col-md-12 detalhe_card">{{$destaqueNews->conteudo}}</div>
+                      <?php $deta = strip_tags($destaqueNews->conteudo)?>
+                      <div class="col-md-12 detalhe_card">{!! $deta !!}</div>
                     @endif
                   </div>
                 </div>
@@ -90,10 +94,14 @@
                       </div>
                     </div>
                     @if(strlen($item->conteudo) > 150)
-                      <?php $deta = substr($item->conteudo, 0, 150) ?>
-                      <div class="col-md-12 detalhe_card">{{$deta}}...</div>
+                      <?php
+                          $text1 = strip_tags($item->conteudo);
+                          $deta = substr($text1, 0, 150);
+                      ?>
+                      <div class="col-md-12 detalhe_card">{!! $deta !!}...</div>
                     @else
-                      <div class="col-md-12 detalhe_card">{{$item->conteudo}}</div>
+                      <?php $deta = strip_tags($item->conteudo)?>
+                      <div class="col-md-12 detalhe_card">{!! $deta !!}</div>
                     @endif
                   </div>
                 </div>
