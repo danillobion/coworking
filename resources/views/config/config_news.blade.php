@@ -58,11 +58,9 @@
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">Titulo</th>
-                        <th scope="col">Conteudo(a)</th>
                         <th scope="col">Views</th>
                         <th scope="col">Data</th>
                         <th scope="col">Destaque</th>
-                        <th scope="col">Status</th>
                         <th scope="col">Opções</th>
                       </tr>
                     </thead>
@@ -72,24 +70,22 @@
                       <tr>
                         <th scope="row">{{$cont}}</th>
                         <td>{{$item->titulo}}</td>
-                        <td>{{$item->conteudo}}</td>
                         <td>{{$item->visualizacao}}</td>
-                        <td>dd/mm/aaaa</td>
+                        <td>{{$item->created_at->format('d/m/Y')}}</td>
                         @if($item->destaque == 0)
                           <td><a class="btn btn-secondary btn-sm" href="{{ route('destaque_news', ['idNews'=>$item->id, 'value'=>0]) }}">NÃO</td>
                         @else
                           <td><a class="btn btn-primary btn-sm" href="{{ route('destaque_news', ['idNews'=>$item->id, 'value'=>1]) }}">SIM</td>
                         @endif
-                        <td>???</td>
                         <td>
                           <div>
                               <button class="btn btn-primary btn-sm" id="ver{{$item->id}}" type="button" name="ver" value="{{$item}}" onclick="ver({{$item}})">Ver</button>
                               <button class="btn btn-secondary btn-sm" id="edit{{$item->id}}" type="button" name="editar" value="{{$item}}" onclick="editar({{$item}})">Editar</button>
-                              <form action="{{route('delete_news')}}" method="post">
+                              <form id="formDelete" action="{{route('delete_news')}}" method="post">
                                 @csrf
                                 <input type="hidden" name="idNews" value="{{$item->id}}">
-                                <button class="btn btn-danger btn-sm" id="delete{{$item->id}}" type="submit">Deletar</button>
                               </form>
+                              <button class="btn btn-danger btn-sm" id="delete{{$item->id}}" type="button" onclick="deletar()">Deletar</button>
                           </div>
                         </td>
                       </tr>
@@ -168,6 +164,11 @@
 
     document.getElementById("customRadio1").checked = false;
     document.getElementById("customRadio2").checked = true;
+  }
+  function deletar(){
+    if(confirm("Você deseja deletar?")){
+        document.getElementById("formDelete").submit();
+    }
   }
 </script>
 @endsection

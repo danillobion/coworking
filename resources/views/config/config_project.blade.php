@@ -64,8 +64,7 @@
                         <th scope="col">Titulo</th>
                         <th scope="col">Coordenador(a)</th>
                         <th scope="col">Views</th>
-                        <th scope="col">Data</th>
-                        <th scope="col">Status</th>
+                        <th scope="col">Data de criação</th>
                         <th scope="col">Opções</th>
                       </tr>
                     </thead>
@@ -77,18 +76,16 @@
                         <td>{{$item->titulo}}</td>
                         <td>{{$item->coordenador}}</td>
                         <td>{{$item->visualizacao}}</td>
-                        <td>dd/mm/aaaa</td>
-                        <td>???</td>
+                        <td>{{$item->created_at->format('d/m/Y')}}</td>
                         <td>
                           <div>
                               <button class="btn btn-primary btn-sm" id="ver{{$item->id}}" type="button" name="ver" value="{{$item}}" onclick="ver({{$item}})">Ver</button>
                               <button class="btn btn-secondary btn-sm" id="edit{{$item->id}}" type="button" name="editar" value="{{$item}}" onclick="editar({{$item}})">Editar</button>
-                              <form action="{{route('delete_project')}}" method="post">
+                              <form id="formDelete" action="{{route('delete_project')}}" method="post">
                                 @csrf
                                 <input type="hidden" name="idProjeto" value="{{$item->id}}">
-                                <button class="btn btn-danger btn-sm" id="delete{{$item->id}}" type="submit">Deletar</button>
                               </form>
-
+                              <button class="btn btn-danger btn-sm" id="delete{{$item->id}}" type="button" onclick="deletar()">Deletar</button>
                           </div>
                         </td>
                       </tr>
@@ -158,6 +155,11 @@
     document.getElementById("idCoordenador").disabled = false;
 
     document.getElementById("idForm").action = "{{route('add_project')}}";
+  }
+  function deletar(){
+    if(confirm("Você deseja deletar?")){
+        document.getElementById("formDelete").submit();
+    }
   }
 </script>
 @endsection
