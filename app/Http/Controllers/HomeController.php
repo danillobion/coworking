@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Project;
 use App\News;
+use App\Pessoa;
 
 class HomeController extends Controller
 {
@@ -36,5 +37,10 @@ class HomeController extends Controller
     {
         $resultado = News::orderBy("created_at", "desc")->get();
         return view('config/config_news' , ['allNews'=>$resultado]);
+    }
+    public function pessoas()
+    {
+        $resultado = Pessoa::orderBy("created_at", "desc")->get();
+        return view('config/config_pessoa', ['allPessoas'=>$resultado]);
     }
 }

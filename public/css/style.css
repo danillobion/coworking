@@ -66,6 +66,42 @@
 }
 /*x MENU x*/
 
+/* CARD - PESSOA */
+.imagemCards{
+  border-radius: 50%;
+  width: 110px;
+  height: 110px;
+  overflow: hidden;
+  position: relative;
+}
+.cardPessoa{
+  background-color:white;
+  margin:0.5rem;
+  border: 2.5px solid #f2f2f2;
+  border-radius: 12px;
+  -webkit-box-shadow: 10px 10px 7px -6px rgba(0,0,0,0.4);
+-moz-box-shadow: 10px 10px 7px -6px rgba(0,0,0,0.4);
+box-shadow: 10px 10px 7px -6px rgba(0,0,0,0.4);
+}
+.cardPessoa:hover{
+  background-color:white;
+  margin:0.5rem;
+  border: 2.5px solid #2bc09a;
+  border-radius: 12px;
+  -webkit-box-shadow: 10px 10px 7px -6px rgba(0,0,0,0.4);
+-moz-box-shadow: 10px 10px 7px -6px rgba(0,0,0,0.4);
+box-shadow: 10px 10px 7px -6px rgba(0,0,0,0.4);
+}
+.cardPessoaNome{
+  font-family: arial;
+  font-weight: bold;
+}
+.cardPessoaArea{
+  font-family: arial;
+}
+
+/*x CARD - PESSOA x*/
+
 /* RODAPE */
 .rodape{
   background-color:#1d1d1d;

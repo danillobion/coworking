@@ -52,6 +52,9 @@
                     <a class="menuPrincipal_tagA" href="{{ route('all_news') }}">News</a>
                   </div>
                   <div class="col-md-1">
+                    <a class="menuPrincipal_tagA" href="{{ route('all_pessoa') }}">Pessoas</a>
+                  </div>
+                  <div class="col-md-1">
                     <a class="menuPrincipal_tagA" href="#ancora">Contato</a>
                   </div>
                 </div>
@@ -70,6 +73,9 @@
                     </div>
                     <div class="col-md-1">
                         <a class="nav-link" href="{{ route('config_news') }}" style="color:white;">News</a>
+                    </div>
+                    <div class="col-md-1">
+                        <a class="nav-link" href="{{ route('config_pessoa') }}" style="color:white;">Pessoas</a>
                     </div>
                     <div class="col-md-1">
                       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
