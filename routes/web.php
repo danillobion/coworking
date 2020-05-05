@@ -31,6 +31,11 @@ Route::get('/config.news', 'HomeController@news')->name('config_news');
 Route::post('/add.news', 'NewsController@addNews')->name('add_news');
 Route::post('/edit.news', 'NewsController@editNews')->name('edit_news');
 Route::post('/delete.news', 'NewsController@deleteNews')->name('delete_news');
+  //people
+Route::get('/config.pessoa', 'HomeController@pessoas')->name('config_pessoa');
+Route::post('/add.pessoa', 'PessoaController@addPessoa')->name('add_pessoa');
+Route::post('/edit.pessoa', 'PessoaController@editPessoa')->name('edit_pessoa');
+Route::post('/delete.pessoa', 'PessoaController@deletePessoa')->name('delete_pessoa');
 
 //nao logado
 Route::get('/home', function(){return view('welcome');})->name('home');
@@ -41,3 +46,5 @@ Route::get('/show.project', 'ProjectController@showProject')->name('show_project
 Route::get('/all.news', 'NewsController@allNews')->name('all_news');
 Route::get('/show.news', 'NewsController@showNews')->name('show_news');
 Route::get('/destaque.news', 'NewsController@destaqueNews')->name('destaque_news');
+  //pessoa
+Route::get('/all.pessoa', 'PessoaController@allPessoa')->name('all_pessoa');
