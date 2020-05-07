@@ -35,6 +35,7 @@
   font-weight:bold;
   font-family: arial;
   font-size: 19px;
+  margin-top: 25px;
 }
 .titulo2{
   color:#2bc09a;
@@ -56,6 +57,7 @@
   width:100%; font-family: arial;
   text-align:justify;
 }
+
 .paragrafo{
   color:#848484;
   font-family: arial;
