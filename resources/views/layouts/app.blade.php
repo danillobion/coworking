@@ -101,19 +101,22 @@
         </div>
         <div class="rodape" style="width:100%; bottom: 0;">
           <div class="container">
-            <div class="row justify-content-center" style="text-align:center;">
+            <div class="row justify-content-center" style="text-align:center; margin-top:0.5rem;">
               <div class="col-md-4">
-                <img src="{{asset('imagens/coworking_logo_grande.png')}}" alt="..." width="150px">
+                <img src="{{asset('imagens/coworking_logo_grande.png')}}" alt="..." width="100px">
               </div>
-              <div class="col-md-4" style="margin-top:1rem;">
-                <img src="{{asset('imagens/ufape_logo.png')}}" alt="..." width="200px">
+              <div class="col-md-4" style="margin-top:0rem;">
+                <img src="{{asset('imagens/ufape_logo.png')}}" alt="..." width="160px">
               </div>
-              <div class="col-md-4" style="color:white;">
+              <div class="col-md-4" style="color:white; margin-top:0.9rem;">
                 <div class="row justify-content-center">
-                  <div class="col-md-12" style="margin:5px; margin-bottom:-10px;"><p style="font-size:17px; font-family:arial;">Redes Sociais</p></div>
-                  <div class="col-md-2"><img src="{{asset('imagens/instagram_logo.png')}}" alt="..." width="35px" style="margin:5px;"></div>
-                  <div class="col-md-2"><img src="{{asset('imagens/twitter_logo.png')}}" alt="..." width="37px" style="margin:5px;"></div>
-                  <div class="col-md-2"><img src="{{asset('imagens/youtube_logo.png')}}" alt="..." width="40px" style="margin:5px;"></div>
+                  <!-- <div class="col-md-12" style="margin:5px; margin-bottom:-10px;"><p style="font-size:17px; font-family:arial;">Redes Sociais</p></div> -->
+                  <div class="col-md-2">
+                    <a href="https://www.instagram.com/bccufape/" target="tab" style="text-decoration:none;">
+                      <img src="{{asset('imagens/instagram_logo.png')}}" alt="..." width="30px" style="margin:5px;"></div>
+                    </a>
+                  <div class="col-md-2"><img src="{{asset('imagens/twitter_logo.png')}}" alt="..." width="32px" style="margin:5px;"></div>
+                  <div class="col-md-2"><img src="{{asset('imagens/youtube_logo.png')}}" alt="..." width="35px" style="margin:5px;"></div>
                 </div>
               </div>
             </div>
