@@ -55,7 +55,7 @@
                     <a class="menuPrincipal_tagA" href="{{ route('all_pessoa') }}">Pessoas</a>
                   </div>
                   <div class="col-md-1">
-                    <a class="menuPrincipal_tagA" href="#ancora">Contato</a>
+                    <a class="menuPrincipal_tagA" href="{{ route('contato') }}">Contato</a>
                   </div>
                 </div>
               </div>
@@ -99,7 +99,7 @@
         <div style="padding-top: 2rem; ">
             @yield('content')
         </div>
-        <div class="rodape" style="width:100%; bottom: 0;" id="ancora">
+        <div class="rodape" style="width:100%; bottom: 0;">
           <div class="container">
             <div class="row justify-content-center" style="text-align:center;">
               <div class="col-md-4">
