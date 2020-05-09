@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
   <div class="row justify-content-center">
-      <div class="col-md-8 titulo2" style="margin-bottom:1rem;">News</div>
+      <div class="col-md-8 titulo2" style="margin-bottom:1rem;margin-top: -1rem;text-align:center;">News</div>
   </div>
 </div>
 @if(isset($destaqueNews->destaque) == 1)

@@ -24,17 +24,17 @@
                           <a style="color:red;">{{ $message }}</a>
                         </div>
                       @enderror
-                      <label>Destaque<a style="color:red;">*</a></label>
+                      <!-- <label>Destaque<a style="color:red;">*</a></label> -->
                       <!-- <input class="form-control" type="text" id="idCoordenador" name="coordenador" value=""> -->
-                      <div class="custom-control custom-radio">
+                      <!-- <div class="custom-control custom-radio">
                         <input type="radio" id="customRadio1" name="customRadio" value="true" class="custom-control-input">
                         <label class="custom-control-label" for="customRadio1">Sim, quero deixar essa notícia em destaque</label>
-                      </div>
+                      </div> -->
                       <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio2" name="customRadio" value="false" class="custom-control-input" checked="true">
-                        <label class="custom-control-label" for="customRadio2">Não.</label>
+                        <input type="hidden" id="customRadio2" name="customRadio" value="false" class="custom-control-input" checked="true">
+                        <!-- <label class="custom-control-label" for="customRadio2">Não.</label> -->
                       </div>
-                      <label>Imagem</label>
+                      <label>Imagem<a style="color:red;">*</a></label>
                       <input type="file" class="form-control-file @error('imagemCapa') is-invalid @enderror form-control" id="imagemCapa" name="imagemCapa" value="{{ old('imagemCapa') }}" placeholder="Selecione um arquivo" />
                       @error('imagemCapa')
                         <div >
@@ -60,7 +60,7 @@
                         <th scope="col">Titulo</th>
                         <th scope="col">Views</th>
                         <th scope="col">Data</th>
-                        <th scope="col">Destaque</th>
+                        <!-- <th scope="col">Destaque</th> -->
                         <th scope="col">Opções</th>
                       </tr>
                     </thead>
@@ -72,11 +72,11 @@
                         <td>{{$item->titulo}}</td>
                         <td>{{$item->visualizacao}}</td>
                         <td>{{$item->created_at->format('d/m/Y')}}</td>
-                        @if($item->destaque == 0)
+                        <!-- @if($item->destaque == 0)
                           <td><a class="btn btn-secondary btn-sm" href="{{ route('destaque_news', ['idNews'=>$item->id, 'value'=>0]) }}">NÃO</td>
                         @else
                           <td><a class="btn btn-primary btn-sm" href="{{ route('destaque_news', ['idNews'=>$item->id, 'value'=>1]) }}">SIM</td>
-                        @endif
+                        @endif -->
                         <td>
                           <div>
                               <button class="btn btn-primary btn-sm" id="ver{{$item->id}}" type="button" name="ver" value="{{$item}}" onclick="ver({{$item}})">Ver</button>
@@ -100,44 +100,23 @@
 </div>
 <script type="application/javascript">
   function ver($item){
+    //carregar campos
     document.getElementById("idTitulo").value = $item.titulo;
-    // document.getElementById("idDescricao").value = $item.conteudo;
     tinymce.get("idDescricao").setContent($item.conteudo);
-
-    if($item.destaque == true){
-      document.getElementById("customRadio1").checked = true;
-      document.getElementById("customRadio2").checked = false;
-    }else{
-      document.getElementById("customRadio1").checked = false;
-      document.getElementById("customRadio2").checked = true;
-    }
-
+    document.getElementById("customRadio2").value = false;
+    //bloquear campos
     document.getElementById("idTitulo").disabled = true;
-    // document.getElementById("idDescricao").disabled = true;
     tinymce.get("idDescricao").setMode('readonly');
-    document.getElementById("customRadio1").disabled = true;
-    document.getElementById("customRadio2").disabled = true;
   }
   function editar($item){
     document.getElementById("idTemp").value = $item.id;
+    //carregar campos
     document.getElementById("idTitulo").value = $item.titulo;
-    // document.getElementById("idDescricao").value = $item.conteudo;
     tinymce.get("idDescricao").setContent($item.conteudo);
-    if($item.destaque == true){
-      document.getElementById("customRadio1").checked = true;
-      document.getElementById("customRadio2").checked = false;
-    }else{
-      document.getElementById("customRadio1").checked = false;
-      document.getElementById("customRadio2").checked = true;
-    }
-    // document.getElementById("imagemCapa").name = $item.imagemCapa;
-    // console.log($item.imagemCapa);
-
+    document.getElementById("customRadio2").value = false;
+    //desbloquear campos
     document.getElementById("idTitulo").disabled = false;
-    // document.getElementById("idDescricao").disabled = false;
     tinymce.get("idDescricao").setMode('design');
-    document.getElementById("customRadio1").disabled = false;
-    document.getElementById("customRadio2").disabled = false;
   }
   function salvar($id){
     //nova news

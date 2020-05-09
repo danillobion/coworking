@@ -12,18 +12,11 @@
                     @csrf
                       <label>Tipo<a style="color:red;">*</a></label>
                       <select class="@error('tipo') is-invalid @enderror form-control" id="idTipo" name="tipo" value="{{ old('tipo') }}">
-                        <!-- <option>Selecione...</option> -->
-                        @if(old('tipo') == "Discente")
-                            <option value="Discente" selected>Discente</option>
-                        @elseif(old('tipo') == "Docente")
-                            <option value="Docente" selected>Docente</option>
-                        @elseif(old('tipo') == "Egresso")
-                            <option value="Egresso" selected>Egresso</option>
-                        @else
-                          <option onclick="tipoPessoa(0)">Discente</option>
-                          <option onclick="tipoPessoa(1)">Docente</option>
-                          <option onclick="tipoPessoa(0)">Egresso</option>
-                        @endif
+
+                          <option @if(old('tipo') == "Discente") selected @endif value="Discente" onclick="tipoPessoa(0)">Discente</option>
+                          <option @if(old('tipo') == "Docente") selected @endif value="Docente" onclick="tipoPessoa(1)">Docente</option>
+                          <option @if(old('tipo') == "Egresso") selected @endif value="Egresso" onclick="tipoPessoa(0)">Egresso</option>
+
                       </select>
                       @error('tipo')
                       <div >

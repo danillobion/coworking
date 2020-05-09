@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-8 titulo2" style="margin-bottom:1rem;">Projetos</div>
+      <div class="col-md-8 titulo2" style="margin-bottom:1rem;margin-top: -1rem;text-align:center;">Projetos</div>
         <div class="col-md-8" style="margin-bottom:1rem;">
           @foreach ($allProject as $item)
           <ul class="list-group" style="margin-bottom:1rem;">

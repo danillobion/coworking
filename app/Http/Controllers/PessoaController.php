@@ -96,9 +96,9 @@ class PessoaController extends Controller
     }
     public function allPessoa(){
       // $resultado = Pessoa::orderBy('created_at', 'desc')->paginate(10);
-      $resultadoAluno = Pessoa::where('tipo','ilike','Discente')->get();
-      $resultadoProfessor = Pessoa::where('tipo','ilike','Docente')->get();
-      $resultadoEgresso = Pessoa::where('tipo','ilike','Egresso')->get();
+      $resultadoAluno = Pessoa::where('tipo','ilike','Discente')->orderBy('nome', 'ASC')->get();
+      $resultadoProfessor = Pessoa::where('tipo','ilike','Docente')->orderBy('nome', 'ASC')->get();
+      $resultadoEgresso = Pessoa::where('tipo','ilike','Egresso')->orderBy('nome', 'ASC')->get();
       return view('pessoa', ['allAluno' => $resultadoAluno, 'allProfessor' => $resultadoProfessor, 'allEgresso' => $resultadoEgresso]);
     }
 
