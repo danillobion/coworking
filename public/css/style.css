@@ -76,6 +76,14 @@
   overflow: hidden;
   position: relative;
 }
+.imagemCards2{
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 5px;
+}
 .cardPessoa{
   background-color:white;
   margin:0.5rem;

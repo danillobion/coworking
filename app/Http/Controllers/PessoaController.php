@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Pessoa;
+use App\Coordenador;
+use App\Membro;
 use Intervention\Image\ImageManagerStatic as Image;
 use \Crypt;
 use DB;
@@ -86,10 +88,14 @@ class PessoaController extends Controller
       // dd($request);
       $nomeimagem = Pessoa::where('id','=',$request->idPessoa)->first()->imagemCapa;
       if($nomeimagem == ''){
+        Coordenador::where('pessoa_id','ilike',$request->idPessoa)->delete();
+        Membro::where('pessoa_id','ilike',$request->idPessoa)->delete();
         $resultado = Pessoa::where('id','ilike',$request->idPessoa)->delete();
         // dd($resultado);
       }else{
         unlink('storage/imagens/pessoas/'.$nomeimagem);
+        Coordenador::where('pessoa_id','ilike',$request->idPessoa)->delete();
+        Membro::where('pessoa_id','ilike',$request->idPessoa)->delete();
         $resultado = Pessoa::where('id','ilike',$request->idPessoa)->delete();
       }
       return redirect()->route('config_pessoa');

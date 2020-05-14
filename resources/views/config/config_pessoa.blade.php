@@ -23,7 +23,7 @@
                         <a style="color:red;">{{ $message }}</a>
                       </div>
                       @enderror
-                      <label>Nome<a style="color:red;">*</a></label>
+                      <label>Nome e Sobrenome<a style="color:red;">*</a></label>
                       <input class="form-control @error('nome') is-invalid @enderror form-control" type="text" id="idNome" name="nome" value="{{ old('nome') }}">
                       @error('nome')
                         <div >

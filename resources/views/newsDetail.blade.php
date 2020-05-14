@@ -9,12 +9,8 @@
           <div class="col-md-12 titulo_card" style="text-align: left; margin-bottom:5px;">{{$newsDetail->titulo}}</div>
           <div class="col-md-12" style="text-align: left;">
             <div class="row justify-content-left">
-              <?php
-                $dataehora = explode(" ", $newsDetail->created_at);
-                $data = $dataehora[0];
-              ?>
-              <div class="col-md-2 titulo2" style="font-size:15px;">{{$data}}</div>
-              <div class="col-md-1 titulo2" style="font-size:15px;">{{$newsDetail->visualizacao}}</div>
+              <div class="col-md-2 titulo2" style="font-size:15px;">{{$newsDetail->created_at->format('d-m-Y')}}</div>
+              <div class="col-md-1 titulo2" style="font-size:15px;">Views:{{$newsDetail->visualizacao}}</div>
             </div>
           </div>
           <label class="col-md-7 detalhe_card">
