@@ -24,8 +24,17 @@ Route::get('/config.home', 'HomeController@index')->name('config_home');
   //project
 Route::get('/config.project', 'HomeController@projects')->name('config_project');
 Route::post('/add.project', 'ProjectController@addProject')->name('add_project');
-Route::post('/edit.project', 'ProjectController@editProject')->name('edit_project');
+Route::get('/edit.project', 'ProjectController@editProject')->name('edit_project');
+Route::post('/update.project', 'ProjectController@updateProject')->name('update_project');
 Route::post('/delete.project', 'ProjectController@deleteProject')->name('delete_project');
+Route::get('/create.project', 'ProjectController@createProjects')->name('create_project');
+Route::get('/select.project', 'ProjectController@selectProjects')->name('select_project');
+  //coordenador
+Route::post('/add.coordenador', 'CoordenadorController@addCoordenador')->name('add_coordenador');
+Route::post('/delete.coordenador', 'CoordenadorController@deleteCoordenador')->name('delete_coordenador');
+  //membro
+Route::post('/add.membro', 'MembroController@addMembro')->name('add_membro');
+Route::post('/delete.membro', 'MembroController@deleteMembro')->name('delete_membro');
   //news
 Route::get('/config.news', 'HomeController@news')->name('config_news');
 Route::post('/add.news', 'NewsController@addNews')->name('add_news');

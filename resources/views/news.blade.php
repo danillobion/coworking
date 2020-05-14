@@ -30,11 +30,7 @@
               <div class="col-md-8">
                 <div class="col-md-12">
                   <div class="row" style="margin-left:-15px; margin-right:-15px;">
-                    <?php
-                      $dataehora = explode(" ", $destaqueNews->created_at);
-                      $data = $dataehora[0];
-                    ?>
-                    <div class="col-sm-3 subtitulo_card" style="color:black">{{$data}}</div>
+                    <div class="col-sm-3 subtitulo_card" style="color:black">{{$destaqueNews->created_at->format('d-m-Y')}}</div>
                     <div class="col-sm-1 subtitulo_card" style="color:black">{{$destaqueNews->visualizacao}}</div>
                   </div>
                 </div>
@@ -85,11 +81,7 @@
                     </div>
                     <div class="col-md-12" style="width:100%">
                       <div class="row" style="margin-left:-15px; margin-right:-15px;">
-                        <?php
-                          $dataehora = explode(" ", $item->created_at);
-                          $data = $dataehora[0];
-                        ?>
-                        <div class="col-sm-3 subtitulo_card">{{$data}}</div>
+                        <div class="col-sm-3 subtitulo_card">{{$item->created_at->format('d-m-Y')}}</div>
                         <div class="col-sm-1 subtitulo_card">{{$item->visualizacao}}</div>
                       </div>
                     </div>

@@ -11,4 +11,7 @@ class Pessoa extends Model
   public function user(){
     return $this->belongsTo('App\User');
   }
+  public function coordenador(){
+    return $this->belongsTo('App\Coordenador');
+  }
 }
