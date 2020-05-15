@@ -31,7 +31,7 @@ class NewsController extends Controller
               $thumbPath = storage_path('app/public/imagens/news/'.$imagemCapa);
               Image::configure(array('driver' => 'imagick'));
               $image = Image::make(request()->imagemCapa->path());
-              $image->fit(120, 120)->save($thumbPath);
+              $image->fit(300, 300)->save($thumbPath);
           }
           News::create([
             'titulo'           => $request->titulo,
@@ -65,7 +65,7 @@ class NewsController extends Controller
               $thumbPath = storage_path('app/public/imagens/news/'.$imagemCapa);
               Image::configure(array('driver' => 'imagick'));
               $image = Image::make(request()->imagemCapa->path());
-              $image->fit(120, 120)->save($thumbPath);
+              $image->fit(300, 300)->save($thumbPath);
           }
           //deleta imagem
           $resultadoIMG = News::where('id','=',$request->id)->first()->imagemCapa;
