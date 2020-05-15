@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <div class="card">
+            <div class="card" style="margin-bottom:5rem;">
                 <div class="card-header">Editar projeto</div>
 
                 <div class="card-body">
@@ -18,7 +18,14 @@
                         </div>
                       @enderror
                       <label>Tipo<a style="color:red;">*</a></label>
-                      <input class="form-control @error('tipo') is-invalid @enderror form-control" type="text" id="idTipo" name="tipo" value="{{ $projeto->tipo }}">
+                      <!-- <input class="form-control @error('tipo') is-invalid @enderror form-control" type="text" id="idTipo" name="tipo" value="{{ $projeto->tipo }}"> -->
+                      <select class="browser-default form-control @error('tipo') is-invalid @enderror" name="tipo">
+                        <option value="" disable="" selected="" hidden="">-- Selecionar o Tipo --</option>
+                        <option value="Desenvolvimento Tecnológico" @if($projeto->tipo == "Desenvolvimento Tecnológico") selected @endif>Desenvolvimento Tecnológico</option>
+                        <option value="Ensino" @if($projeto->tipo == "Ensino") selected @endif>Ensino</option>
+                        <option value="Extensão" @if($projeto->tipo == "Extensão") selected @endif>Extensão</option>
+                        <option value="Pesquisa" @if($projeto->tipo == "Pesquisa") selected @endif>Pesquisa</option>
+                      </select>
                       @error('tipo')
                         <div >
                           <a style="color:red;">{{ $message }}</a>
@@ -59,7 +66,7 @@
                         </div>
                       @enderror
                       <input type="hidden" id="idTemp" name="id" value="{{$projeto->id}}">
-                      <button class="btn btn-primary" id="botaoSalvarAtualizar" type="submit" >Salvar</button>
+                      <button class="btn btn-success" id="botaoSalvarAtualizar" type="submit" style="margin-top:2rem; width:100%">Atualizar</button>
                   </form>
                 </div>
             </div>
