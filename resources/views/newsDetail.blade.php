@@ -18,7 +18,7 @@
           </label>
           <div class="col-md-5" style="text-align:left">
             @if(isset($newsDetail->imagemCapa) && $newsDetail->imagemCapa!="")
-            <td><img src="{{asset('storage/imagens/news/' . $newsDetail->imagemCapa)}}" alt="..." width="200px;" style="border-radius: 15px;"></td>
+            <td><img src="{{asset('storage/imagens/news/' . $newsDetail->imagemCapa)}}" alt="..." width="270px;" style="border-radius: 15px;"></td>
             @endif
           </div>
         </div>

@@ -37,7 +37,7 @@ class ProjectController extends Controller
               $thumbPath = storage_path('app/public/imagens/projects/'.$imagemCapa);
               Image::configure(array('driver' => 'imagick'));
               $image = Image::make(request()->imagemCapa->path());
-              $image->fit(120, 120)->save($thumbPath);
+              $image->fit(300, 300)->save($thumbPath);
           }
           $idProjeto = Project::create([
             'titulo'           => $request->titulo,
@@ -80,7 +80,7 @@ class ProjectController extends Controller
             $thumbPath = storage_path('app/public/imagens/projects/'.$imagemCapa);
             Image::configure(array('driver' => 'imagick'));
             $image = Image::make(request()->imagemCapa->path());
-            $image->fit(120, 120)->save($thumbPath);
+            $image->fit(300, 300)->save($thumbPath);
         }
         //deleta imagem
         $resultadoIMG = Project::where('id','=',$request->id)->first()->imagemCapa;
