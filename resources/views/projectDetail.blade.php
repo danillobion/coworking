@@ -25,10 +25,21 @@
                 @endif
               </div>
               <div class="col-md-11" style="text-align:center;">
-                <label class="titulo2"style="font-size:15px; margin-top:0.5rem;">Coordenador(es) do Projeto:</label>
+                @if(count($allCoordenadoresProject)==0)
+                  <label class="titulo2"style="font-size:15px; margin-top:0.5rem;">Coordenador do Projeto:</label>
+                  <label class="titulo2"style="font-size:15px; margin-top:0.5rem;">Nenhum</label>
+                @elseif(count($allCoordenadoresProject)==1)
+                  <label class="titulo2"style="font-size:15px; margin-top:0.5rem;">Coordenador do Projeto:</label>
+                @elseif(count($allCoordenadoresProject)>1)
+                  <label class="titulo2"style="font-size:15px; margin-top:0.5rem;">Coordenadores do Projeto:</label>
+                @endif
                 <ul class="list-group" style="text-align:left;" >
                   @foreach($allCoordenadoresProject as $itemCoordenador)
-                  <a href="{{$itemCoordenador->pessoa->lattes}}" target="tab" style="text-decoration: none;">
+                    @if($itemCoordenador->pessoa->lattes != "")
+                      <a href="{{$itemCoordenador->pessoa->lattes}}" target="tab" style="text-decoration: none;">
+                    @else
+                      <a>
+                    @endif
                     <li class="list-group-item list-group-item-action" style="margin-top:3px;">
                       <div class="btn-group" style="margin-right:-15px; margin-left:-15px">
                         <div style="width:60px; height: 60px;margin-left:5px;margin-right:5px; text-align:center;">
@@ -49,10 +60,21 @@
                 </ul>
               </div>
               <div class="col-md-11" style="text-align:center;">
-                <label class="titulo2"style="font-size:15px; margin-top:0.5rem;">Membro(s) do Projeto:</label>
+                @if(count($allMembrosProject)==0)
+                  <label class="titulo2"style="font-size:15px; margin-top:0.5rem;">Membro do Projeto:</label>
+                  <label class="titulo2"style="font-size:15px; margin-top:0.5rem;">Nenhum</label>
+                @elseif(count($allMembrosProject)==1)
+                  <label class="titulo2"style="font-size:15px; margin-top:0.5rem;">Membro do Projeto:</label>
+                @elseif(count($allMembrosProject)>1)
+                  <label class="titulo2"style="font-size:15px; margin-top:0.5rem;">Membros do Projeto:</label>
+                @endif
                 <ul class="list-group" style="text-align:left;" >
                   @foreach($allMembrosProject as $itemMembro)
-                  <a href="{{$itemMembro->pessoa->lattes}}" target="tab" style="text-decoration: none;">
+                    @if($itemMembro->pessoa->lattes != "")
+                      <a href="{{$itemMembro->pessoa->lattes}}" target="tab" style="text-decoration: none;">
+                    @else
+                      <a>
+                    @endif
                     <li class="list-group-item list-group-item-action" style="margin-top:3px;">
                       <div class="btn-group" style="margin-right:-15px; margin-left:-15px">
                         <div style="width:60px; height: 60px;margin-left:5px;margin-right:5px; text-align:center;">
