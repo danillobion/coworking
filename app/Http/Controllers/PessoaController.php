@@ -54,8 +54,7 @@ class PessoaController extends Controller
         'nome'               => 'required|min:3|max:500',
         'tipo'               => 'required|min:3|max:150',
         // 'area'               => 'required|min:3|max:150',
-        'lattes'             => 'required|min:3|max:150',
-        'imagemCapa'         => 'required',
+        // 'lattes'             => 'required|min:3|max:150',
       ]);
       $imagemCapa = "";
       if($request->hasFile('imagemCapa') && $request->file('imagemCapa')->isValid()) {
