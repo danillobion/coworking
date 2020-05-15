@@ -9,7 +9,11 @@
         <div class="row justify-content-center">
           @foreach ($allAluno as $item)
             <div class="col-md-2 cardPessoa">
-              <a href="http://{{$item->lattes}}" target="tab" style="color: inherit;text-decoration:none; ">
+                @if($item->lattes != "")
+                  <a href="{{$item->lattes}}" target="tab" style="color: inherit; text-decoration: none;">
+                @else
+                  <a>
+                @endif
               <div class="row justify-content-center" style="text-align:center;">
                   <div class="col-md-12" style="margin-top:25px;margin-bottom:5px;">
                     @if(isset($item->imagemCapa) && $item->imagemCapa!="")
@@ -36,7 +40,11 @@
         <div class="row justify-content-center">
           @foreach ($allProfessor as $item)
           <div class="col-md-2 cardPessoa">
-            <a href="http://{{$item->lattes}}" target="tab" style="color: inherit;text-decoration:none; ">
+              @if($item->lattes != "")
+                <a href="{{$item->lattes}}" target="tab" style="color: inherit; text-decoration: none;">
+              @else
+                <a>
+              @endif
               <div class="row justify-content-center" style="text-align:center;">
                   <div class="col-md-12" style="margin-top:25px;margin-bottom:5px;">
                     @if(isset($item->imagemCapa) && $item->imagemCapa!="")
@@ -72,7 +80,11 @@
         <div class="row justify-content-center">
           @foreach ($allEgresso as $item)
           <div class="col-md-2 cardPessoa">
-            <a href="http://{{$item->lattes}}" target="tab" style="color: inherit;text-decoration:none; ">
+              @if($item->lattes != "")
+                <a href="{{$item->lattes}}" target="tab" style="color: inherit; text-decoration: none;">
+              @else
+                <a>
+              @endif
               <div class="row justify-content-center" style="text-align:center;">
                   <div class="col-md-12" style="margin-top:25px;margin-bottom:5px;">
                     @if(isset($item->imagemCapa) && $item->imagemCapa!="")
