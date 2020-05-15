@@ -68,7 +68,6 @@ class ProjectController extends Controller
         'descricao'             => 'required|min:3|max:10000',
         'dataInicio'            => 'required',
         'dataTermino'           => 'required',
-        'imagemCapa'            => 'required',
     ]);
     $imagemCapa = "";
     if($request->hasFile('imagemCapa') && $request->file('imagemCapa')->isValid()) {

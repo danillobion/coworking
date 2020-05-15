@@ -42,13 +42,13 @@
                         </div>
                       @enderror
                       <input type="hidden" id="idTemp" name="id" value=-1>
-                      <button class="btn btn-primary" id="botaoSalvarAtualizar" type="button" onclick="salvar(-1)">Salvar</button>
-                      <button class="btn btn-secondary" type="button" onclick="limpar()">Limpar</button>
+                      <button class="btn btn-success" id="botaoSalvarAtualizar" type="button" onclick="salvar(-1)" style="margin-top:1rem; width:100%">Salvar</button>
+                      <!-- <button class="btn btn-secondary" type="button" onclick="limpar()">Limpar</button> -->
                   </form>
                 </div>
             </div>
         </div>
-        <div class="col-md-12" style="margin-top:1rem;">
+        <div class="col-md-12" style="margin-top:1rem;margin-bottom: 5rem;">
             <div class="card">
                 <div class="card-header">News cadastradas</div>
 

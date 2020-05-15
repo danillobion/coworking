@@ -49,6 +49,10 @@ class NewsController extends Controller
 
     }
     public function editNews(Request $request){
+      $this->validate($request,[
+          'titulo'                => 'required|min:3|max:1000',
+          'descricao'             => 'required|min:3|max:10000',
+      ]);
       $imagemCapa = "";
       if($request->hasFile('imagemCapa') && $request->file('imagemCapa')->isValid()) {
           $ext = strtolower(request()->imagemCapa->getClientOriginalExtension());
