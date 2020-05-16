@@ -24,15 +24,19 @@
           <div class="col-md-12">
             <div class="row">
               <div class="col-md-12" style="margin-top:5px; margin-bottom:5px;">
-                <a href="https://www.instagram.com/bccufape/" target="tab" style="text-decoration:none;">
+                <a href="https://www.instagram.com/bccufape/" target="tab" style="text-decoration:none; color:black">
                   <img src="{{asset('imagens/logo_instagram_preto.svg')}}" alt="..." style="width:35px"> Instagram
                 </a>
               </div>
               <div class="col-md-12" style="margin-top:5px; margin-bottom:5px;">
-                <img src="{{asset('imagens/logo_twitter_preto.svg')}}" alt="..." style="width:35px"> Twitter
+                <a href="https://www.facebook.com/bccufape" target="tab" style="text-decoration:none; color:black">
+                  <img src="{{asset('imagens/facebook_preto_logo.png')}}" alt="..." style="width:35px"> Facebook
+                </a>
               </div>
               <div class="col-md-12" style="margin-top:5px; margin-bottom:5px;">
-                <img src="{{asset('imagens/logo_youtube_preto.svg')}}" alt="..." style="width:35px"> Youtube
+                <a href="https://www.youtube.com/bccufape" target="tab" style="text-decoration:none; color:black">
+                  <img src="{{asset('imagens/logo_youtube_preto.svg')}}" alt="..." style="width:35px"> Youtube
+                </a>
               </div>
             </div>
           </div>

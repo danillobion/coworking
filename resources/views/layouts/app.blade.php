@@ -110,13 +110,21 @@
               </div>
               <div class="col-md-4" style="color:white; margin-top:0.9rem;">
                 <div class="row justify-content-center">
-                  <!-- <div class="col-md-12" style="margin:5px; margin-bottom:-10px;"><p style="font-size:17px; font-family:arial;">Redes Sociais</p></div> -->
                   <div class="col-md-2">
                     <a href="https://www.instagram.com/bccufape/" target="tab" style="text-decoration:none;">
-                      <img src="{{asset('imagens/instagram_logo.png')}}" alt="..." width="30px" style="margin:5px;"></div>
+                      <img src="{{asset('imagens/instagram_logo.png')}}" alt="..." width="32px" style="margin:5px;">
                     </a>
-                  <div class="col-md-2"><img src="{{asset('imagens/twitter_logo.png')}}" alt="..." width="32px" style="margin:5px;"></div>
-                  <div class="col-md-2"><img src="{{asset('imagens/youtube_logo.png')}}" alt="..." width="35px" style="margin:5px;"></div>
+                  </div>
+                  <div class="col-md-2">
+                    <a href="https://www.facebook.com/bccufape" target="tab" style="text-decoration:none;">
+                      <img src="{{asset('imagens/facebook_logo.png')}}" alt="..." width="32px" style="margin:5px;">
+                    </a>
+                  </div>
+                  <div class="col-md-2">
+                    <a href="https://www.youtube.com/bccufape" target="tab" style="text-decoration:none;">
+                      <img src="{{asset('imagens/youtube_logo.png')}}" alt="..." width="42px" style="margin:5px;">
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
