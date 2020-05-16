@@ -10,8 +10,7 @@
           <div class="col-md-12" style="text-align: left;">
             <div class="row justify-content-left">
               <div class="col-md-2 titulo2" style="font-size:15px;">{{$projectDetail->created_at->format('d-m-Y')}}</div>
-              <div class="col-md-1 titulo2" style="font-size:15px;">Views:{{$projectDetail->visualizacao}}</div>
-              <div class="col-md-4 titulo2" style="font-size:15px;">Tipo:{{$projectDetail->tipo}}</div>
+              <div class="col-md-9 titulo2" style="font-size:15px;">Tipo:{{$projectDetail->tipo}}</div>
             </div>
           </div>
           <label class="col-md-7 detalhe_card">

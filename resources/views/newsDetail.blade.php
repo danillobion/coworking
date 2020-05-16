@@ -10,7 +10,6 @@
           <div class="col-md-12" style="text-align: left;">
             <div class="row justify-content-left">
               <div class="col-md-2 titulo2" style="font-size:15px;">{{$newsDetail->created_at->format('d-m-Y')}}</div>
-              <div class="col-md-1 titulo2" style="font-size:15px;">Views:{{$newsDetail->visualizacao}}</div>
             </div>
           </div>
           <label class="col-md-7 detalhe_card">
