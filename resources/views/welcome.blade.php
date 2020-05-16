@@ -17,9 +17,9 @@
               </div>
               <div class="col-md-1"> </div>
               <div class="col-md-6 paragrafo">
-                <p class="paragrafo_tipo2">O BCC Coworking é um Laboratório de Pesquisa e Desenvolvimento, sendo uma iniciativa do curso de Computação, que surgiu com o propósito de servir como um local propício para o desenvolvimento de projetos reais, servindo até como fomento, com supervisão de profissionais da área, garantindo o conhecimento e a experiência técnica, através do uso de práticas e ferramentas do mercado de trabalho. É um ambiente onde o discente tem a oportunidade trazer sua idéia/projeto, de criar, manter e aumentar o networking com outras pessoas de diversas áreas. É um local para aperfeiçoamento da produtividade.
+                <p class="paragrafo_tipo2">O BCC Coworking é um Laboratório de Pesquisa e Desenvolvimento, concebido pelo curso de Computação, surgindo com o propósito de servir como um local propício para o desenvolvimento de projetos reais, servindo também como fomentação de projetos com iniciativa dos discentes, com supervisão de profissionais da área, garantindo o conhecimento e a experiência técnica, através do uso de práticas e ferramentas do mercado de trabalho.
                 </p>
-                <p class="paragrafo_tipo2">É importante destacar que não se trata de um espaço físico apenas, é principalmente um ambiente destinado aos estudantes em busca de conhecimento, experiência técnica, autonomia, fomentação e desenvolvimento de projetos. É apoiado pelos docentes do curso e da instituição, sendo uma antiga demanda demonstrada pela comunidade BCC.
+                <p class="paragrafo_tipo2">É um local para aperfeiçoamento da produtividade, sendo importante destacar que não se trata de um espaço físico apenas, é principalmente um ambiente destinado aos estudantes em busca de conhecimento, experiência técnica, autonomia, fomentação e desenvolvimento de projetos.
                 </p>
               </div>
             </div>
