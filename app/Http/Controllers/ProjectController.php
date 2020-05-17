@@ -20,8 +20,8 @@ class ProjectController extends Controller
           'titulo'                => 'required|min:3|max:1000',
           'tipo'                  => 'required|string|min:3|max:255',
           'descricao'             => 'required|min:3|max:10000',
-          'dataInicio'            => 'required',
-          'dataTermino'           => 'required',
+          'status'                => 'required',
+          // 'dataTermino'           => 'required',
           'imagemCapa'            => 'required',
       ]);
 
@@ -43,7 +43,7 @@ class ProjectController extends Controller
             'titulo'           => $request->titulo,
             'conteudo'         => $request->descricao,
             'tipo'             => $request->tipo,
-            'dataInicio'       => $request->dataInicio,
+            'status'           => $request->status,
             'dataTermino'      => $request->dataTermino,
             'visualizacao'     => '0',
             'user_id'          => Auth::user()->id,
@@ -66,8 +66,8 @@ class ProjectController extends Controller
         'titulo'                => 'required|min:3|max:1000',
         'tipo'                  => 'required|string|min:3|max:255',
         'descricao'             => 'required|min:3|max:10000',
-        'dataInicio'            => 'required',
-        'dataTermino'           => 'required',
+        'status'                => 'required',
+        // 'dataTermino'           => 'required',
     ]);
     $imagemCapa = "";
     if($request->hasFile('imagemCapa') && $request->file('imagemCapa')->isValid()) {
@@ -87,11 +87,11 @@ class ProjectController extends Controller
         unlink('storage/imagens/projects/'.$resultadoIMG);
         //atualiza
         $resultado = Project::where('id','=',$request->id)
-        ->update(['titulo' => $request->titulo, 'conteudo' => $request->descricao, 'dataInicio' => $request->dataInicio, 'dataTermino' => $request->dataTermino, 'tipo' => $request->tipo, 'imagemCapa' => $imagemCapa,]);
+        ->update(['titulo' => $request->titulo, 'conteudo' => $request->descricao, 'status' => $request->status, 'dataTermino' => $request->dataTermino, 'tipo' => $request->tipo, 'imagemCapa' => $imagemCapa,]);
     }else{
       //atualiza
       $resultado = Project::where('id','=',$request->id)
-      ->update(['titulo' => $request->titulo, 'conteudo' => $request->descricao, 'dataInicio' => $request->dataInicio, 'dataTermino' => $request->dataTermino, 'tipo' => $request->tipo,]);
+      ->update(['titulo' => $request->titulo, 'conteudo' => $request->descricao, 'status' => $request->status, 'dataTermino' => $request->dataTermino, 'tipo' => $request->tipo,]);
     }
 
     return redirect()->route('config_project')->with('sucesso', 'Projeto atualizado com sucesso!');

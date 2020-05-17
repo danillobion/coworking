@@ -18,8 +18,8 @@ class CreateProjectsTable extends Migration
             $table->string('titulo',1000);
             $table->string('conteudo',10000);
             $table->string('tipo');
-            $table->date('dataInicio');
-            $table->date('dataTermino');
+            $table->string('status');
+            $table->date('dataTermino')->nullable();
             $table->integer('visualizacao');
             $table->string("imagemCapa")->nullable();
             $table->timestamps();
