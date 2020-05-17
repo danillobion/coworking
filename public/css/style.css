@@ -48,10 +48,11 @@
   font-size: 22px;
 }
 .subtitulo_card{
-  width:100%; font-family: arial;
+  font-family: arial;
   color:#2bc09a;
   text-align:justify;
   font-weight: bold;
+  margin-right: 5px;
 }
 .detalhe_card{
   width:100%; font-family: arial;
@@ -67,6 +68,23 @@
   text-align: justify;;
 }
 /*x MENU x*/
+
+/* CARD PROJETO */
+.styleCardWeb{
+  display:block;
+}
+.styleCardMobile{
+  display:none;
+}
+@media screen and (max-width: 992px){
+  .styleCardWeb{
+    display:none;
+  }
+  .styleCardMobile{
+    display:block;
+  }
+}
+/* x CARD PROJETO x */
 
 /* CARD - PESSOA */
 .imagemCards{
@@ -108,6 +126,15 @@ box-shadow: 10px 10px 7px -6px rgba(0,0,0,0.4);
 }
 .cardPessoaArea{
   font-family: arial;
+}
+
+.styleCardProjecto{
+  border-radius: 15px; background-color:white; margin-left:-10px;margin-right:-10px; margin-bottom:20px; border: 2.5px solid #f2f2f2;-webkit-box-shadow: 10px 10px 7px -6px rgba(0,0,0,0.4);
+-moz-box-shadow: 10px 10px 7px -6px rgba(0,0,0,0.4);
+box-shadow: 10px 10px 7px -6px rgba(0,0,0,0.4);
+}
+.styleCardProjecto:hover{
+  border-radius: 15px; background-color:white; margin-left:-10px;margin-right:-10px; margin-bottom:20px;border: 2.5px solid #2bc09a;
 }
 
 /*x CARD - PESSOA x*/
