@@ -136,4 +136,8 @@ class ProjectController extends Controller
     $resultadoMembro = Membro::where('project_id','=',$request->idProject)->get();
     return view('config/config_project_select', ['idProjeto' => $request->idProject, 'resultadoAllCoordenadores' => $resultadoAllCoordenadores,'resultadoAllMembros' => $resultadoAllMembros,'allCoordenadores' => $resultadoCoordenador, 'allMembros' => $resultadoMembro]);
   }
+  public function portfolio(){
+    $resultado = Project::where('status','ilike','Finalizado')->orderBy('created_at', 'desc')->paginate(10);
+    return view('portfolio', ['allProject' => $resultado,]);
+  }
 }
