@@ -57,5 +57,6 @@ Route::get('/show.news', 'NewsController@showNews')->name('show_news');
 Route::get('/destaque.news', 'NewsController@destaqueNews')->name('destaque_news');
   //pessoa
 Route::get('/all.pessoa', 'PessoaController@allPessoa')->name('all_pessoa');
+Route::get('/all.portfolio', 'ProjectController@portfolio')->name('portfolio');
   //contato
 Route::get('/contato', function(){return view('contato');})->name('contato');
