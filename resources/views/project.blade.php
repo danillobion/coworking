@@ -14,7 +14,11 @@
               <a href="{{ route('show_project', ['idProject'=>$item->id,]) }}" style="color: inherit; text-decoration: none;">
               <div class="row" style="margin-top:15px;margin-bottom: 8px;">
                 <div class="col-5">
-                  <img src="{{asset('storage/imagens/projects/' . $item->imagemCapa)}}" alt="..." style="border-radius: 15px; width:100%; margin:5px;">
+                  @if($item->imagemCapa != "imagemDefault.png")
+                    <img src="{{asset('storage/imagens/projects/' . $item->imagemCapa)}}" alt="..." style="border-radius: 15px; width:100%; margin:5px;">
+                  @else
+                    <img src="{{asset('imagens/imagemDefault.png')}}" alt="..." style="border-radius: 15px; width:100%; margin:5px;">
+                  @endif
                 </div>
                 <div class="col-7" style="text-align:left;">
                   <div class="form-group">

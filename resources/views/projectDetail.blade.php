@@ -10,7 +10,8 @@
           <div class="col-md-12" style="text-align: left;">
             <div class="row justify-content-left">
               <div class="col-md-2 titulo2" style="font-size:15px;">{{$projectDetail->created_at->format('d-m-Y')}}</div>
-              <div class="col-md-9 titulo2" style="font-size:15px;">Tipo:{{$projectDetail->tipo}}</div>
+              <div class="col-md-4 titulo2" style="font-size:15px;">Tipo:{{$projectDetail->tipo}}</div>
+              <div class="col-md-6 titulo2" style="font-size:15px;">{{$projectDetail->status}}</div>
             </div>
           </div>
           <label class="col-md-7 detalhe_card">
@@ -19,8 +20,10 @@
           <div class="col-md-5" style="text-align:left;">
             <div class="row">
               <div class="col-md-12">
-                @if(isset($projectDetail->imagemCapa) && $projectDetail->imagemCapa!="")
-                <td><img src="{{asset('storage/imagens/projects/' . $projectDetail->imagemCapa)}}" alt="..." width="270px;" style="border-radius: 15px;"></td>
+                @if(isset($projectDetail->imagemCapa) && $projectDetail->imagemCapa!="imagemDefault.png")
+                  <img src="{{asset('storage/imagens/projects/' . $projectDetail->imagemCapa)}}" alt="..." width="270px;" style="border-radius: 15px;">
+                @else
+                  <img src="{{asset('imagens/imagemDefault.png')}}" alt="..." width="270px;" style="border-radius: 15px;">
                 @endif
               </div>
               <div class="col-md-11" style="text-align:center;">
