@@ -22,7 +22,7 @@ class ProjectController extends Controller
           'descricao'             => 'required|min:3|max:10000',
           'status'                => 'required',
           // 'dataTermino'           => 'required',
-          'imagemCapa'            => 'required',
+          // 'imagemCapa'            => 'required',
       ]);
 
       $imagemCapa = "";
@@ -52,7 +52,17 @@ class ProjectController extends Controller
 
           return redirect()->route('select_project', ['idProject' => $idProjeto])->with('sucesso', 'Projeto cadastrado com sucesso!');
       }else{
-        return redirect()->route('select_project', ['idProject' => $idProjeto])->with('atencao', 'Verifique os campos e tente novamente!');
+          $idProjeto = Project::create([
+            'titulo'           => $request->titulo,
+            'conteudo'         => $request->descricao,
+            'tipo'             => $request->tipo,
+            'status'           => $request->status,
+            'dataTermino'      => $request->dataTermino,
+            'visualizacao'     => '0',
+            'user_id'          => Auth::user()->id,
+            'imagemCapa'       => "imagemDefault.png",
+          ]);
+        return redirect()->route('select_project', ['idProject' => $idProjeto])->with('sucesso', 'Projeto cadastrado com sucesso!');
       }
 
   }
@@ -82,9 +92,11 @@ class ProjectController extends Controller
             $image = Image::make(request()->imagemCapa->path());
             $image->fit(300, 300)->save($thumbPath);
         }
-        //deleta imagem
-        $resultadoIMG = Project::where('id','=',$request->id)->first()->imagemCapa;
-        unlink('storage/imagens/projects/'.$resultadoIMG);
+          //deleta imagem
+          $resultadoIMG = Project::where('id','=',$request->id)->first()->imagemCapa;
+          if($resultadoIMG != "imagemDefault.png"){
+            unlink('storage/imagens/projects/'.$resultadoIMG);
+          }
         //atualiza
         $resultado = Project::where('id','=',$request->id)
         ->update(['titulo' => $request->titulo, 'conteudo' => $request->descricao, 'status' => $request->status, 'dataTermino' => $request->dataTermino, 'tipo' => $request->tipo, 'imagemCapa' => $imagemCapa,]);
@@ -104,7 +116,9 @@ class ProjectController extends Controller
     if($nomeimagem == ''){
       $resultado = Project::where('id','ilike',$request->idProjeto)->delete();
     }else{
-      unlink('storage/imagens/projects/'.$nomeimagem);
+      if($nomeimagem != "imagemDefault.png"){
+        unlink('storage/imagens/projects/'.$nomeimagem);
+      }
       $resultado = Project::where('id','ilike',$request->idProjeto)->delete();
     }
     return redirect()->route('config_project');
