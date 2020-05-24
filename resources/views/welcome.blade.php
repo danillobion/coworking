@@ -8,89 +8,85 @@
     <div class="col-md-12">
       <div class="container">
         <div class="row justify-content-center" style="text-align:center; margin-top:-1rem; margin-bottom:1rem;">
-          <div class="col-md-12 titulo" style="font-size:27px;">Bem vindo ao BCC Coworking</div>
-          <div class="col-md-12 paragrafo">BCC Coworking - Laboratório de Pesquisa & Desenvolvimento</div>
+          <div class="col-md-12 titulo" style="font-size:27px;">{{$allHome->titulo1}}</div>
+          <div class="col-md-12 paragrafo">{{$allHome->subtitulo1}}</div>
           <div class="col-md-12">
             <div class="row justify-content-center" style="text-align:center; margin-top:2rem;">
-              <div class="col-md-4">
-                <img src="{{asset('imagens/img1.png')}}" alt="..." width="435px">
+              <div class="col-md-4" style="margin-top:1rem;">
+                @if(isset($allHome->imagemCapa1) && $allHome->imagemCapa1 !="imagemHomeDefault1.png")
+                  <img src="{{asset('storage/imagens/home/' . $allHome->imagemCapa1)}}" alt="..." width="435px" style="border-radius: 33px;">
+                @else
+                  <img src="{{asset('imagens/img1.png')}}" alt="..." width="435px">
+                @endif
               </div>
               <div class="col-md-1"> </div>
               <div class="col-md-6 paragrafo">
-                <p class="paragrafo_tipo2">O BCC Coworking é um Laboratório de Pesquisa e Desenvolvimento, concebido pelo curso de Computação, surgindo com o propósito de servir como um local propício para o desenvolvimento de projetos reais, servindo também como fomentação de projetos com iniciativa dos discentes, com supervisão de profissionais da área, garantindo o conhecimento e a experiência técnica, através do uso de práticas e ferramentas do mercado de trabalho.
-                </p>
-                <p class="paragrafo_tipo2">É um local para aperfeiçoamento da produtividade, sendo importante destacar que não se trata de um espaço físico apenas, é principalmente um ambiente destinado aos estudantes em busca de conhecimento, experiência técnica, autonomia, fomentação e desenvolvimento de projetos.
+                <p class="paragrafo_tipo2">{!! $allHome->texto !!}
                 </p>
               </div>
             </div>
           </div>
           <div class="col-md-12 titulo" style="margin-top:2rem;">
-            <label style="font-size:27px; margin-bottom:-1rem;">O que oferecemos</label>
+            <div class="row justify-content-center">
+              <div class="col-md-12">
+                <label style="font-size:27px; margin-bottom:-1rem;">{!! $allHome->titulo2 !!}</label>
+              </div>
+              <div class="col-md-12 paragrafo" style="font-weight:normal">{!! $allHome->subtitulo2 !!}</div>
+            </div>
           </div>
           <div class="col-md-12" style="margin-top:2rem; margin-bottom:2rem;">
             <div class="row justify-content-center">
               <div class="col-md-4">
                 <div class="row justify-content-center">
                   <div class="col-md-12">
-                    <img src="{{asset('imagens/img2.png')}}" alt="..." width="250px">
+                    <!-- <img src="{{asset('imagens/img2.png')}}" alt="..." width="250px"> -->
+                    @if(isset($allHome->imagemCapa2) && $allHome->imagemCapa2 !="imagemHomeDefault2.png")
+                      <img src="{{asset('storage/imagens/home/' . $allHome->imagemCapa2)}}" alt="..." width="250px" style="border-radius: 33px;">
+                    @else
+                      <img src="{{asset('imagens/img2.png')}}" alt="..." width="250px">
+                    @endif
                   </div>
                   <div class="col-md-12 titulo">
-                    Público alvo
+                    {!! $allHome->titulo3 !!}
                   </div>
                   <div class="col-md-12 paragrafo" style="margin-top:0.5rem;">
-
-                    <ul style="text-align:left;">
-                    <li>Alunos com projetos em desenvolvimento;</li>
-                    <li>Alunos buscando a participação em projetos;</li>
-                    <li>Professores com projetos em execução (Pesquisa/Ensino/Extensão) com foco em aplicação comercial e/ou P&D.</li>
-                    </ul>
-
+                    {!! $allHome->legenda1 !!}
                   </div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="row justify-content-center">
                   <div class="col">
-                    <img src="{{asset('imagens/img3.png')}}" alt="..." width="250px">
+                    <!-- <img src="{{asset('imagens/img3.png')}}" alt="..." width="250px"> -->
+                    @if(isset($allHome->imagemCapa3) && $allHome->imagemCapa3 !="imagemHomeDefault3.png")
+                      <img src="{{asset('storage/imagens/home/' . $allHome->imagemCapa3)}}" alt="..." width="250px" style="border-radius: 33px;">
+                    @else
+                      <img src="{{asset('imagens/img3.png')}}" alt="..." width="250px">
+                    @endif
                   </div>
                   <div class="col-md-12 titulo">
-                    Possibilidades de interações
+                    {!! $allHome->titulo4 !!}
                   </div>
                   <div class="col-md-12 paragrafo" style="margin-top:0.5rem;">
-
-                      <ul style="text-align:left;">
-                        <li>Carga horária complementar em: Pesquisa, Ensino, Extensão;</li>
-                        <li>Estágio Supervisionado Obrigatório (Coordenação de Curso);</li>
-                        <li>Trabalho de Conclusão de Curso;</li>
-                        <li>Oferta e auxílio em Cursos de Capacitação;</li>
-                        <li>Sugestão de Processo/Metodologia de Desenvolvimento;</li>
-                        <li>Mentoring e Acompanhamento;</li>
-                        <li>Espaço físico (lab. 24).</li>
-                      </ul>
-
+                      {!! $allHome->legenda2 !!}
                   </div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="row justify-content-center">
                   <div class="col">
-                    <img src="{{asset('imagens/img4.png')}}" alt="..." width="250px">
+                    <!-- <img src="{{asset('imagens/img4.png')}}" alt="..." width="250px"> -->
+                    @if(isset($allHome->imagemCapa4) && $allHome->imagemCapa4 !="imagemHomeDefault4.png")
+                      <img src="{{asset('storage/imagens/home/' . $allHome->imagemCapa4)}}" alt="..." width="250px" style="border-radius: 33px;">
+                    @else
+                      <img src="{{asset('imagens/img4.png')}}" alt="..." width="250px">
+                    @endif
                   </div>
                   <div class="col-md-12 titulo">
-                    Benefícios para os discentes
+                    {!! $allHome->titulo5 !!}
                   </div>
                   <div class="col-md-12 paragrafo" style="margin-top:0.5rem;">
-
-                    <ul style="text-align:left;">
-                        <li>Aprendizagem/Conhecimento e Experiência Técnica</li>
-                        <li>Interação social e Networking</li>
-                        <li>Confiança e Autonomia</li>
-                        <li>Aumento da Produtividade e Foco</li>
-                        <li>Desenvolvimento da Criatividade e Inovação</li>
-                        <li>Mais disposição e menos Estresse</li>
-                        <li>Motivação pela Inovação e Diversidade</li>
-                        <li>Atuação com práticas e ferramentas do mercado de trabalho.</li>
-                    </ul>
+                      {!! $allHome->legenda3 !!}
                   </div>
                 </div>
               </div>

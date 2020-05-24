@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Project;
 use App\News;
 use App\Pessoa;
+use App\Configpaginainicial;
 
 class HomeController extends Controller
 {
@@ -26,7 +27,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('config/config_home');
+        $resultado = Configpaginainicial::get();
+        return view('config/config_home', ['allHome'=>$resultado]);
     }
     public function projects()
     {

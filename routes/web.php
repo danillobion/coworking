@@ -14,13 +14,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('home');
 });
 
 
 Auth::routes();
 //logado
+  //home
 Route::get('/config.home', 'HomeController@index')->name('config_home');
+Route::post('/edit.bloco.apresentacao', 'ConfigPaginaInicialController@editBlocoApresentacao')->name('edit_blocoApresentacao');
+Route::post('/edit.bloco.detalhe', 'ConfigPaginaInicialController@editBlocoDetalhe')->name('edit_blocoDetalhe');
+Route::post('/edit.bloco.esquerda', 'ConfigPaginaInicialController@editBlocoEsquerda')->name('edit_blocoEsquerda');
+Route::post('/edit.bloco.centro', 'ConfigPaginaInicialController@editBlocoCentro')->name('edit_blocoCentro');
+Route::post('/edit.bloco.direita', 'ConfigPaginaInicialController@editBlocoDireita')->name('edit_blocoDireita');
+Route::post('/edit.img.apresentacao', 'ConfigPaginaInicialController@editImgApresentacao')->name('edit_imgPrincipal');
+Route::post('/edit.img.bloco.esquerda', 'ConfigPaginaInicialController@editImgBlocoEsquerda')->name('edit_imgBlocoEsquerda');
+Route::post('/edit.img.bloco.centro', 'ConfigPaginaInicialController@editImgBlocoCentro')->name('edit_imgBlocoCentro');
+Route::post('/edit.img.bloco.direita', 'ConfigPaginaInicialController@editImgBlocoDireita')->name('edit_imgBlocoDireita');
   //project
 Route::get('/config.project', 'HomeController@projects')->name('config_project');
 Route::post('/add.project', 'ProjectController@addProject')->name('add_project');
@@ -47,7 +57,7 @@ Route::post('/edit.pessoa', 'PessoaController@editPessoa')->name('edit_pessoa');
 Route::post('/delete.pessoa', 'PessoaController@deletePessoa')->name('delete_pessoa');
 
 //nao logado
-Route::get('/home', function(){return view('welcome');})->name('home');
+Route::get('/home', 'ConfigPaginaInicialController@index')->name('home');
   //project
 Route::get('/all.project', 'ProjectController@allProject')->name('all_project');
 Route::get('/show.project', 'ProjectController@showProject')->name('show_project');
