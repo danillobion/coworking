@@ -28,7 +28,7 @@
     <script>
       tinymce.init({
         selector:'textarea',
-        plugins: 'link',
+        plugins: 'link lists',
         menubar: false,
       });
     </script>
@@ -74,9 +74,9 @@
                 <!-- menu secundario -->
                 <div class="col-md-12 menuTerciario">
                   <div class="row justify-content-center">
-                    <!-- <div class="col-md-1">
-                    <a class="nav-link" href="{{ route('config_home') }}">Página Inicial <span class="sr-only">(current)</span></a>
-                    </div> -->
+                    <div class="col-md-1">
+                    <a class="nav-link" href="{{ route('config_home') }}" style="color:white;">Home <span class="sr-only">(current)</span></a>
+                    </div>
                     <div class="col-md-1">
                       <a class="nav-link" href="{{ route('config_project') }}" style="color:white;">Projetos</a>
                     </div>
