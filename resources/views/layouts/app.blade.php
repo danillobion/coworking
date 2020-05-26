@@ -115,7 +115,7 @@
           <div class="container">
             <div class="row justify-content-center" style="text-align:center; margin-top:0.5rem;">
               <div class="col-md-4">
-                <img src="{{asset('imagens/coworking_logo_grande.png')}}" alt="..." width="100px">
+                <img src="{{asset('imagens/logo_bcc_rodape3.png')}}" alt="..." width="230px">
               </div>
               <div class="col-md-4" style="margin-top:0rem;">
                 <img src="{{asset('imagens/ufape_logo.png')}}" alt="..." width="160px">
