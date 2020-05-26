@@ -64,6 +64,9 @@
                     <a class="menuPrincipal_tagA" href="{{ route('all_pessoa') }}">Pessoas</a>
                   </div>
                   <div class="col-md-1">
+                    <a class="menuPrincipal_tagA" href="{{ route('midia') }}">Mídia</a>
+                  </div>
+                  <div class="col-md-1">
                     <a class="menuPrincipal_tagA" href="{{ route('contato') }}">Contato</a>
                   </div>
                 </div>
