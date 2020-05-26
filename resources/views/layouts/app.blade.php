@@ -46,22 +46,16 @@
               <div class="col-md-12 menuSecundario">
                 <div class="row justify-content-center">
                   <div class="col-md-1">
-                    <!-- <a class="menuPrincipal_tagA" href="{{ route('all_project') }}">Projetos</a> -->
-                    <div class="dropdown show">
-                      <a class="menuPrincipal_tagA " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Projetos
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="{{ route('portfolio') }}">Portifólio</a>
-                        <a class="dropdown-item" href="{{ route('all_project') }}">Todos os projetos</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-1">
                     <a class="menuPrincipal_tagA" href="{{ route('all_news') }}">News</a>
                   </div>
                   <div class="col-md-1">
                     <a class="menuPrincipal_tagA" href="{{ route('all_pessoa') }}">Pessoas</a>
+                  </div>
+                  <div class="col-md-1">
+                    <a class="menuPrincipal_tagA" href="{{ route('all_project') }}">Projetos</a>
+                  </div>
+                  <div class="col-md-1">
+                    <a class="menuPrincipal_tagA" href="{{ route('portfolio') }}">Portifólio</a>
                   </div>
                   <div class="col-md-1">
                     <a class="menuPrincipal_tagA" href="{{ route('midia') }}">Mídia</a>
