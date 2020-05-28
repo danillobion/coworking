@@ -7,7 +7,7 @@
       <div class="col-md-8 titulo2" style="margin-bottom:1rem;margin-top: -1rem;text-align:center;">Mídia</div>
       <!--x titulo x-->
       <!-- midia -->
-      <div class="col-md-12" style="text-align:center;">
+      <div class="col-md-12" style="text-align:center; margin-bottom:4rem;">
         <div class="row justify-content-between">
           <div class="col-sm-12">
             <div class="content node-page">
@@ -17,8 +17,10 @@
                       <!-- SnapWidget -->
                       <script src="https://snapwidget.com/js/snapwidget.js">
                       </script>
-                      <p>Instagram: @bccufape</p>
-                      <p><iframe allowtransparency="true" class="snapwidget-widget" frameborder="0" scrolling="no" src="https://snapwidget.com/embed/386257" style="border:none; overflow:hidden; width:100%; "></iframe></p>
+                      <p><a href="https://www.instagram.com/bccufape/" target="tab">
+                        <img src="{{asset('imagens/logo_instagram_preto.svg')}}" alt="..." style="width:35px"><label style="margin-left:5px;">@bccufape</label>
+                      </a></p>
+                      <p><iframe src="https://snapwidget.com/embed/831402" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:660px; height:1155px"></iframe></p>
                     </div>
                   </div>
                 </div>
