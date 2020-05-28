@@ -35,11 +35,11 @@
                               <!-- <button class="btn btn-secondary btn-sm" id="edit{{$item->id}}" type="button" name="editar" value="{{$item}}" onclick="editar({{$item}})">Editar</button> -->
                               <form id="formDelete" action="{{route('delete_project')}}" method="post">
                                 @csrf
-                                <input type="hidden" name="idProjeto" value="{{$item->id}}">
+                                <input type="hidden" id="idProjetoInput" name="idProjeto" value="">
                               </form>
                               <a class="btn btn-secondary btn-sm" href="{{ route('edit_project', ['idProject'=>$item->id,]) }}" >Editar Projeto</a>
                               <a class="btn btn-secondary btn-sm" href="{{ route('select_project', ['idProject'=>$item->id,]) }}" >Editar Coo/Mem</a>
-                              <button class="btn btn-danger btn-sm" id="delete{{$item->id}}" type="button" onclick="deletar()">Deletar</button>
+                              <button class="btn btn-danger btn-sm" id="delete{{$item->id}}" type="button" onclick="deletar({{$item->id}})">Deletar</button>
                           </div>
                         </td>
                       </tr>
@@ -110,8 +110,9 @@
 
     document.getElementById("idForm").action = "{{route('add_project')}}";
   }
-  function deletar(){
+  function deletar($id){
     if(confirm("Você deseja deletar?")){
+        document.getElementById("idProjetoInput").value = $id;
         document.getElementById("formDelete").submit();
     }
   }

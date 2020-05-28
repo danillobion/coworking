@@ -13,10 +13,10 @@
             <p>Av. Bom Pastor, s/n - Boa Vista, Garanhuns - PE, 55292-270</p>
           </div>
           <div class="col-md-12">
-            <p style="font-size:20px; font-weight:bold;">Telefone</p>
+            <p style="font-size:20px; font-weight:bold;">E-mail</p>
           </div>
           <div class="col-md-12">
-            <p>(87) 3764-5505</p>
+            <p>coordenacao.bcc.uag@ufrpe.br</p>
           </div>
           <div class="col-md-12">
             <p style="font-size:20px; font-weight:bold;">Redes Sociais</p>

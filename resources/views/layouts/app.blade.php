@@ -46,22 +46,19 @@
               <div class="col-md-12 menuSecundario">
                 <div class="row justify-content-center">
                   <div class="col-md-1">
-                    <!-- <a class="menuPrincipal_tagA" href="{{ route('all_project') }}">Projetos</a> -->
-                    <div class="dropdown show">
-                      <a class="menuPrincipal_tagA " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Projetos
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="{{ route('portfolio') }}">Portifólio</a>
-                        <a class="dropdown-item" href="{{ route('all_project') }}">Todos os projetos</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-1">
                     <a class="menuPrincipal_tagA" href="{{ route('all_news') }}">News</a>
                   </div>
                   <div class="col-md-1">
                     <a class="menuPrincipal_tagA" href="{{ route('all_pessoa') }}">Pessoas</a>
+                  </div>
+                  <div class="col-md-1">
+                    <a class="menuPrincipal_tagA" href="{{ route('all_project') }}">Projetos</a>
+                  </div>
+                  <div class="col-md-1">
+                    <a class="menuPrincipal_tagA" href="{{ route('portfolio') }}">Portfólio</a>
+                  </div>
+                  <div class="col-md-1">
+                    <a class="menuPrincipal_tagA" href="{{ route('midia') }}">Mídia</a>
                   </div>
                   <div class="col-md-1">
                     <a class="menuPrincipal_tagA" href="{{ route('contato') }}">Contato</a>
@@ -112,7 +109,7 @@
           <div class="container">
             <div class="row justify-content-center" style="text-align:center; margin-top:0.5rem;">
               <div class="col-md-4">
-                <img src="{{asset('imagens/coworking_logo_grande.png')}}" alt="..." width="100px">
+                <img src="{{asset('imagens/logo_bcc_rodape3.png')}}" alt="..." width="230px">
               </div>
               <div class="col-md-4" style="margin-top:0rem;">
                 <img src="{{asset('imagens/ufape_logo.png')}}" alt="..." width="160px">

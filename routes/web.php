@@ -61,6 +61,8 @@ Route::get('/home', 'ConfigPaginaInicialController@index')->name('home');
   //project
 Route::get('/all.project', 'ProjectController@allProject')->name('all_project');
 Route::get('/show.project', 'ProjectController@showProject')->name('show_project');
+  //midia
+Route::get('/midia', function(){return view('midia');})->name('midia');
   //news
 Route::get('/all.news', 'NewsController@allNews')->name('all_news');
 Route::get('/show.news', 'NewsController@showNews')->name('show_news');

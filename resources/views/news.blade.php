@@ -14,8 +14,8 @@
             <div class="row justify-content-center">
               <div class="col-md-12">
                 <a class="btn" href="{{ route('show_news', ['idNews'=>$destaqueNews->id,]) }}" style="padding-left: 0rem; ">
-                  @if(strlen($destaqueNews->titulo) > 60)
-                    <?php $detaa = substr($item->titulo, 0, 60) ?>
+                  @if(strlen($destaqueNews->titulo) > 72)
+                    <?php $detaa = substr($item->titulo, 0, 72) ?>
                     <div class="titulo_card" style="text-align:left; font-size:30px">{{$detaa}}...</div>
                   @else
                     <div class="titulo_card" style="text-align:left; font-size:30px">{{$destaqueNews->titulo}}</div>
@@ -72,8 +72,8 @@
                 <div class="col-md-8">
                   <div class="row">
                     <div class="col-md-12 titulo_projeto">
-                      @if(strlen($item->titulo) > 60)
-                        <?php $detaa = substr($item->titulo, 0, 60) ?>
+                      @if(strlen($item->titulo) > 72)
+                        <?php $detaa = substr($item->titulo, 0, 72) ?>
                         <div class="titulo_card" style="text-align:left;">{{$detaa}}...</div>
                       @else
                         <div class="titulo_card" style="text-align:left;">{{$item->titulo}}</div>

@@ -145,7 +145,7 @@ class ProjectController extends Controller
   public function selectProjects(Request $request){
     // dd($request);
     $resultadoAllCoordenadores = Pessoa::where('tipo','=','Docente')->get();
-    $resultadoAllMembros = Pessoa::where('tipo','!=','Docente')->get();
+    $resultadoAllMembros = Pessoa::get();
     $resultadoCoordenador = Coordenador::where('project_id','=',$request->idProject)->get();
     $resultadoMembro = Membro::where('project_id','=',$request->idProject)->get();
     return view('config/config_project_select', ['idProjeto' => $request->idProject, 'resultadoAllCoordenadores' => $resultadoAllCoordenadores,'resultadoAllMembros' => $resultadoAllMembros,'allCoordenadores' => $resultadoCoordenador, 'allMembros' => $resultadoMembro]);

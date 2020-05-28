@@ -23,8 +23,8 @@
                 <div class="col-7" style="text-align:left;">
                   <div class="form-group">
                     <div class="">
-                      @if(strlen($item->titulo) > 40)
-                        <?php $detaa = substr($item->titulo, 0, 40) ?>
+                      @if(strlen($item->titulo) > 65)
+                        <?php $detaa = substr($item->titulo, 0, 65) ?>
                         <div class="titulo_card" style="text-align:left;">{{$detaa}}...</div>
                       @else
                         <div class="titulo_card" style="text-align:left;">{{$item->titulo}}</div>
@@ -56,13 +56,15 @@
               <a href="{{ route('show_project', ['idProject'=>$item->id,]) }}" style="color: inherit; text-decoration: none;">
               <div class="row" style="margin-top:1.5rem;margin-bottom: 2rem;">
                 <div class="col-3" style="text-align:left;">
-                  @if(isset($item->imagemCapa) && $item->imagemCapa!="")
+                  @if($item->imagemCapa != "imagemDefault.png")
                     <img src="{{asset('storage/imagens/projects/' . $item->imagemCapa)}}" alt="..." style="border-radius: 10px; width:50px; margin-top:5px;">
+                  @else
+                    <img src="{{asset('imagens/imagemDefault.png')}}" alt="..." style="border-radius: 10px; width:50px; margin-top:5px;">
                   @endif
                 </div>
                 <div class="col" style="text-align:left;">
-                  @if(strlen($item->titulo) > 60)
-                    <?php $detaa = substr($item->titulo, 0, 60) ?>
+                  @if(strlen($item->titulo) > 65)
+                    <?php $detaa = substr($item->titulo, 0, 65) ?>
                     <div class="titulo_card" style="text-align:left;font-size:15px;">{{$detaa}}...</div>
                   @else
                     <div class="titulo_card" style="text-align:left;font-size:15px;">{{$item->titulo}}</div>
