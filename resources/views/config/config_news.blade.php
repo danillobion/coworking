@@ -83,9 +83,9 @@
                               <button class="btn btn-secondary btn-sm" id="edit{{$item->id}}" type="button" name="editar" value="{{$item}}" onclick="editar({{$item}})">Editar</button>
                               <form id="formDelete" action="{{route('delete_news')}}" method="post">
                                 @csrf
-                                <input type="hidden" name="idNews" value="{{$item->id}}">
+                                <input type="hidden" id="idNewsInput" name="idNews" value="">
                               </form>
-                              <button class="btn btn-danger btn-sm" id="delete{{$item->id}}" type="button" onclick="deletar()">Deletar</button>
+                              <button class="btn btn-danger btn-sm" id="delete{{$item->id}}" type="button" onclick="deletar({{$item->id}})">Deletar</button>
                           </div>
                         </td>
                       </tr>
@@ -144,8 +144,10 @@
     document.getElementById("customRadio1").checked = false;
     document.getElementById("customRadio2").checked = true;
   }
-  function deletar(){
+  function deletar($id){
+    // console.log("idNews".$id);
     if(confirm("Você deseja deletar?")){
+        document.getElementById("idNewsInput").value = $id;
         document.getElementById("formDelete").submit();
     }
   }
