@@ -21,8 +21,8 @@
                     @endif
                   </div>
                   <div class="col-md-12" style="padding-bottom:45px;">
-                    @if(strlen($item->nome) > 13)
-                      <?php $detaa = substr($item->nome, 0, 13) ?>
+                    @if(strlen($item->nome) > 18)
+                      <?php $detaa = substr($item->nome, 0, 18) ?>
                       <div class="cardPessoaNome"  style="text-align:center;">{{$detaa}}...</div>
                     @else
                       <div class="cardPessoaNome" style="text-align:center;">{{$item->nome}}</div>
@@ -52,16 +52,16 @@
                     @endif
                   </div>
                   <div class="col-md-12">
-                    @if(strlen($item->nome) > 13)
-                      <?php $detaa = substr($item->nome, 0, 13) ?>
+                    @if(strlen($item->nome) > 18)
+                      <?php $detaa = substr($item->nome, 0, 18) ?>
                       <div class="cardPessoaNome" style="text-align:center;">{{$detaa}}...</div>
                     @else
                       <div class="cardPessoaNome" style="text-align:center;">{{$item->nome}}</div>
                     @endif
                   </div>
                   <div class="col-md-12 cardPessoaArea" style="padding-bottom:45px;">
-                    @if(strlen($item->area) > 13)
-                      <?php $detaa = substr($item->area, 0, 13) ?>
+                    @if(strlen($item->area) > 18)
+                      <?php $detaa = substr($item->area, 0, 18) ?>
                       <div  style="text-align:center;">{{$detaa}}...</div>
                     @else
                       <div  style="text-align:center;">{{$item->area}}</div>
@@ -92,8 +92,8 @@
                     @endif
                   </div>
                   <div class="col-md-12" style="padding-bottom:45px;">
-                    @if(strlen($item->nome) > 13)
-                      <?php $detaa = substr($item->nome, 0, 13) ?>
+                    @if(strlen($item->nome) > 18)
+                      <?php $detaa = substr($item->nome, 0, 18) ?>
                       <div class="cardPessoaNome" style="text-align:center;">{{$detaa}}...</div>
                     @else
                       <div class="cardPessoaNome" style="text-align:center;">{{$item->nome}}</div>
