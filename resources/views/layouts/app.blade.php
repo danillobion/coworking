@@ -55,7 +55,7 @@
                     <a class="menuPrincipal_tagA" href="{{ route('all_project') }}">Projetos</a>
                   </div>
                   <div class="col-md-1">
-                    <a class="menuPrincipal_tagA" href="{{ route('portfolio') }}">Portifólio</a>
+                    <a class="menuPrincipal_tagA" href="{{ route('portfolio') }}">Portfólio</a>
                   </div>
                   <div class="col-md-1">
                     <a class="menuPrincipal_tagA" href="{{ route('midia') }}">Mídia</a>

@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
       <!-- titulo -->
-      <div class="col-md-8 titulo2" style="margin-bottom:1rem;margin-top: -1rem;text-align:center;">Portifólio</div>
+      <div class="col-md-8 titulo2" style="margin-bottom:1rem;margin-top: -1rem;text-align:center;">Portfólio</div>
       <!--x titulo x-->
       <!-- Card -->
       <div class="col-md-12" style="text-align:center;">
