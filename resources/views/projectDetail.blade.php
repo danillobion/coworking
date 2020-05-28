@@ -8,10 +8,10 @@
         <div class="row" style="margin-bottom:2rem;">
           <div class="col-md-12 titulo_card" style="text-align: left; margin-bottom:5px; font-size:25px">{{$projectDetail->titulo}}</div>
           <div class="col-md-12" style="text-align: left;">
-            <div class="row justify-content-left">
-              <div class="col-md-2 titulo2" style="font-size:15px;">{{$projectDetail->created_at->format('d-m-Y')}}</div>
-              <div class="col-md-4 titulo2" style="font-size:15px;">Tipo:{{$projectDetail->tipo}}</div>
-              <div class="col-md-6 titulo2" style="font-size:15px;">{{$projectDetail->status}}</div>
+            <div class="btn-group">
+              <div class="titulo2" style="font-size:15px; margin-right:15px;">{{$projectDetail->created_at->format('d-m-Y')}}</div>
+              <div class="titulo2" style="font-size:15px; margin-right:15px;"><label style="color:grey;">Tipo:</label> {{$projectDetail->tipo}}</div>
+              <div class="titulo2" style="font-size:15px; margin-right:15px;"><label style="color:grey;">Status: </label> {{$projectDetail->status}}</div>
             </div>
           </div>
           <label class="col-md-7 detalhe_card">
