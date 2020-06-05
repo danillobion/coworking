@@ -44,9 +44,9 @@
       </div>
       <div class="col-md-5">
         <div class="row justify-content-center">
-          <div class="col-md-12">
+          <div class="col-md-12" style="margin-top:2rem;">
             <a href="https://www.google.com/maps/place/UFAPE+-+Universidade+Federal+do+Agreste+de+Pernambuco/@-8.9067588,-36.4943075,15z/data=!4m5!3m4!1s0x0:0x9e8a2fd11fab3580!8m2!3d-8.9067588!4d-36.4943075" target="tab">
-              <img src="{{asset('imagens/mapa.png')}}" alt="..." style="border-radius: 15px; width:420px">
+              <img src="{{asset('imagens/mapa.png')}}" alt="..." style="border-radius: 15px; width:100%">
             </a>
           </div>
           <div class="col-md-12" style="text-align:center;">
