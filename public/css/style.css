@@ -157,6 +157,24 @@ box-shadow: 10px 10px 7px -6px rgba(0,0,0,0.4);
 
 /* X CARD - NEWS X */
 
+/* FRAME - MIDIA */
+.styleFrameMidia{
+    width: 100%;
+    height: 1155px;
+}
+@media screen and (max-width: 767px) and (min-width: 576px){
+  .styleFrameMidia{
+      width: 100%;
+      height: 500px;
+  }
+}
+@media screen and (max-width: 576px) and (min-width: 359px){
+  .styleFrameMidia{
+      width: 100%;
+      height: 300px;
+  }
+}
+
 /* RODAPE */
 .rodape{
   background-color:#1d1d1d;

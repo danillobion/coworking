@@ -20,7 +20,7 @@
                       <p><a href="https://www.instagram.com/bccufape/" target="tab">
                         <img src="{{asset('imagens/logo_instagram_preto.svg')}}" alt="..." style="width:35px"><label style="margin-left:5px;">@bccufape</label>
                       </a></p>
-                      <p><iframe src="https://snapwidget.com/embed/831402" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:660px; height:1155px"></iframe></p>
+                      <p><iframe src="https://snapwidget.com/embed/831402" class="snapwidget-widget styleFrameMidia" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; "></iframe></p>
                     </div>
                   </div>
                 </div>
