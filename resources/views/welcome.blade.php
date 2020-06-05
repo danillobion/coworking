@@ -14,9 +14,9 @@
             <div class="row justify-content-center" style="text-align:center; margin-top:2rem;">
               <div class="col-md-4" style="margin-top:1rem;">
                 @if(isset($allHome->imagemCapa1) && $allHome->imagemCapa1 !="imagemHomeDefault1.png")
-                  <img src="{{asset('storage/imagens/home/' . $allHome->imagemCapa1)}}" alt="..." width="435px" style="border-radius: 33px;">
+                  <img class="styleImgPrincipal" src="{{asset('storage/imagens/home/' . $allHome->imagemCapa1)}}" alt="..."style="border-radius: 33px;">
                 @else
-                  <img src="{{asset('imagens/img1.png')}}" alt="..." width="435px">
+                  <img class="styleImgPrincipal" src="{{asset('imagens/img1.png')}}" alt="...">
                 @endif
               </div>
               <div class="col-md-1"> </div>
@@ -41,9 +41,9 @@
                   <div class="col-md-12">
                     <!-- <img src="{{asset('imagens/img2.png')}}" alt="..." width="250px"> -->
                     @if(isset($allHome->imagemCapa2) && $allHome->imagemCapa2 !="imagemHomeDefault2.png")
-                      <img src="{{asset('storage/imagens/home/' . $allHome->imagemCapa2)}}" alt="..." width="250px" style="border-radius: 33px;">
+                      <img class="styleImgPrincipalTrio" src="{{asset('storage/imagens/home/' . $allHome->imagemCapa2)}}" alt="..." style="border-radius: 33px;">
                     @else
-                      <img src="{{asset('imagens/img2.png')}}" alt="..." width="250px">
+                      <img class="styleImgPrincipalTrio" src="{{asset('imagens/img2.png')}}" alt="...">
                     @endif
                   </div>
                   <div class="col-md-12 titulo">
@@ -59,9 +59,9 @@
                   <div class="col">
                     <!-- <img src="{{asset('imagens/img3.png')}}" alt="..." width="250px"> -->
                     @if(isset($allHome->imagemCapa3) && $allHome->imagemCapa3 !="imagemHomeDefault3.png")
-                      <img src="{{asset('storage/imagens/home/' . $allHome->imagemCapa3)}}" alt="..." width="250px" style="border-radius: 33px;">
+                      <img class="styleImgPrincipalTrio" src="{{asset('storage/imagens/home/' . $allHome->imagemCapa3)}}" alt="..." style="border-radius: 33px;">
                     @else
-                      <img src="{{asset('imagens/img3.png')}}" alt="..." width="250px">
+                      <img class="styleImgPrincipalTrio" src="{{asset('imagens/img3.png')}}" alt="...">
                     @endif
                   </div>
                   <div class="col-md-12 titulo">
@@ -77,9 +77,9 @@
                   <div class="col">
                     <!-- <img src="{{asset('imagens/img4.png')}}" alt="..." width="250px"> -->
                     @if(isset($allHome->imagemCapa4) && $allHome->imagemCapa4 !="imagemHomeDefault4.png")
-                      <img src="{{asset('storage/imagens/home/' . $allHome->imagemCapa4)}}" alt="..." width="250px" style="border-radius: 33px;">
+                      <img class="styleImgPrincipalTrio" src="{{asset('storage/imagens/home/' . $allHome->imagemCapa4)}}" alt="..." style="border-radius: 33px;">
                     @else
-                      <img src="{{asset('imagens/img4.png')}}" alt="..." width="250px">
+                      <img class="styleImgPrincipalTrio" src="{{asset('imagens/img4.png')}}" alt="..." >
                     @endif
                   </div>
                   <div class="col-md-12 titulo">

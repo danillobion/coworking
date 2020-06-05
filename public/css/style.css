@@ -68,6 +68,35 @@
 
 }
 /*x MENU x*/
+/* PAGINA PRNCIPAL */
+.styleImgPrincipal{
+  width:435px;
+}
+.styleImgPrincipalTrio{
+  width: 250px;
+}
+@media screen and (max-width: 1199px) and (min-width: 991px){
+  .styleImgPrincipal{
+    width:350px;
+  }
+}
+@media screen and (max-width: 991px) and (min-width: 767px){
+  .styleImgPrincipal{
+    width:255px;
+  }
+  .styleImgPrincipalTrio{
+    width: 200px;
+  }
+}
+@media screen and (max-width: 767px){
+  .styleImgPrincipal{
+    width:100%;
+  }
+  .styleImgPrincipalTrio{
+    width: 100%;
+  }
+}
+/*X PAGINA PRNCIPAL X*/
 
 /* CARD PROJETO */
 .styleCardWeb{
