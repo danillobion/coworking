@@ -52,7 +52,7 @@
               <div class="row justify-content-center" style="text-align:center;">
                   <div class="col-md-12" style="margin-top:25px;margin-bottom:5px;">
                     @if(isset($item->imagemCapa) && $item->imagemCapa!="")
-                    <td><img src="{{asset('storage/imagens/pessoas/' . $item->imagemCapa)}}" alt="..." style="border-radius: 100px;"></td>
+                    <td><img src="{{asset('storage/imagens/pessoas/' . $item->imagemCapa)}}" alt="..." style="border-radius: 100px;" class="imagemCards"></td>
                     @endif
                   </div>
                   <div class="col-md-12">
@@ -94,7 +94,7 @@
               <div class="row justify-content-center" style="text-align:center;">
                   <div class="col-md-12" style="margin-top:25px;margin-bottom:5px;">
                     @if(isset($item->imagemCapa) && $item->imagemCapa!="")
-                    <td><img src="{{asset('storage/imagens/pessoas/' . $item->imagemCapa)}}" alt="..." style="border-radius: 100px;"></td>
+                    <td><img src="{{asset('storage/imagens/pessoas/' . $item->imagemCapa)}}" alt="..." style="border-radius: 100px;" class="imagemCards"></td>
                     @endif
                   </div>
                   <div class="col-md-12" style="padding-bottom:45px;">
