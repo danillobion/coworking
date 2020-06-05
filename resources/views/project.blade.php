@@ -23,8 +23,8 @@
                 <div class="col-7" style="text-align:left;">
                   <div class="form-group">
                     <div class="">
-                      @if(strlen($item->titulo) > 65)
-                        <?php $detaa = substr($item->titulo, 0, 65) ?>
+                      @if(strlen($item->titulo) > 60)
+                        <?php $detaa = substr($item->titulo, 0, 60) ?>
                         <div class="titulo_card" style="text-align:left;">{{$detaa}}...</div>
                       @else
                         <div class="titulo_card" style="text-align:left;">{{$item->titulo}}</div>
@@ -63,8 +63,8 @@
                   @endif
                 </div>
                 <div class="col" style="text-align:left;">
-                  @if(strlen($item->titulo) > 65)
-                    <?php $detaa = substr($item->titulo, 0, 65) ?>
+                  @if(strlen($item->titulo) > 55)
+                    <?php $detaa = substr($item->titulo, 0, 55) ?>
                     <div class="titulo_card" style="text-align:left;font-size:15px;">{{$detaa}}...</div>
                   @else
                     <div class="titulo_card" style="text-align:left;font-size:15px;">{{$item->titulo}}</div>

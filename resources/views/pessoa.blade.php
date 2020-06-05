@@ -4,7 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
       <!-- Alunos -->
-      <div class="col-md-8 titulo2" style="margin-bottom:0.5rem;margin-top: -1rem;text-align:center;">Discentes</div>
+      @if(count($allAluno)>0)
+        <div class="col-md-8 titulo2" style="margin-bottom:0.5rem;margin-top: -1rem;text-align:center;">Discentes</div>
+      @endif
       <div class="col-md-12">
         <div class="row justify-content-center">
           @foreach ($allAluno as $item)
@@ -35,7 +37,9 @@
         </div>
       </div>
       <!-- Professores -->
-      <div class="col-md-8 titulo2" style="margin-bottom:0.5rem;margin-top: 1rem;text-align:center;">Docentes</div>
+      @if(count($allProfessor)>0)
+        <div class="col-md-8 titulo2" style="margin-bottom:0.5rem;margin-top: 1rem;text-align:center;">Docentes</div>
+      @endif
       <div class="col-md-12">
         <div class="row justify-content-center">
           @foreach ($allProfessor as $item)
@@ -48,7 +52,7 @@
               <div class="row justify-content-center" style="text-align:center;">
                   <div class="col-md-12" style="margin-top:25px;margin-bottom:5px;">
                     @if(isset($item->imagemCapa) && $item->imagemCapa!="")
-                    <td><img src="{{asset('storage/imagens/pessoas/' . $item->imagemCapa)}}" alt="..." style="border-radius: 100px;"></td>
+                    <td><img src="{{asset('storage/imagens/pessoas/' . $item->imagemCapa)}}" alt="..." style="border-radius: 100px;" class="imagemCards"></td>
                     @endif
                   </div>
                   <div class="col-md-12">
@@ -75,7 +79,9 @@
         </div>
       </div>
       <!-- Egresso -->
+      @if(count($allEgresso)>0)
         <div class="col-md-8 titulo2" style="margin-bottom:0.5rem;margin-top: 1rem;text-align:center;">Egresso</div>
+      @endif
       <div class="col-md-12">
         <div class="row justify-content-center">
           @foreach ($allEgresso as $item)
@@ -88,7 +94,7 @@
               <div class="row justify-content-center" style="text-align:center;">
                   <div class="col-md-12" style="margin-top:25px;margin-bottom:5px;">
                     @if(isset($item->imagemCapa) && $item->imagemCapa!="")
-                    <td><img src="{{asset('storage/imagens/pessoas/' . $item->imagemCapa)}}" alt="..." style="border-radius: 100px;"></td>
+                    <td><img src="{{asset('storage/imagens/pessoas/' . $item->imagemCapa)}}" alt="..." style="border-radius: 100px;" class="imagemCards"></td>
                     @endif
                   </div>
                   <div class="col-md-12" style="padding-bottom:45px;">

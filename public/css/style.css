@@ -65,9 +65,38 @@
   font-size: 17px;
 }
 .paragrafo_tipo2{
-  
+
 }
 /*x MENU x*/
+/* PAGINA PRNCIPAL */
+.styleImgPrincipal{
+  width:435px;
+}
+.styleImgPrincipalTrio{
+  width: 250px;
+}
+@media screen and (max-width: 1199px) and (min-width: 991px){
+  .styleImgPrincipal{
+    width:350px;
+  }
+}
+@media screen and (max-width: 991px) and (min-width: 767px){
+  .styleImgPrincipal{
+    width:255px;
+  }
+  .styleImgPrincipalTrio{
+    width: 200px;
+  }
+}
+@media screen and (max-width: 767px){
+  .styleImgPrincipal{
+    width:100%;
+  }
+  .styleImgPrincipalTrio{
+    width: 100%;
+  }
+}
+/*X PAGINA PRNCIPAL X*/
 
 /* CARD PROJETO */
 .styleCardWeb{
@@ -94,6 +123,16 @@
   overflow: hidden;
   position: relative;
 }
+@media screen and (max-width: 1199px) and (min-width: 767px){
+  .imagemCards{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+}
+
 .imagemCards2{
   border-radius: 50%;
   width: 55px;
@@ -138,6 +177,42 @@ box-shadow: 10px 10px 7px -6px rgba(0,0,0,0.4);
 }
 
 /*x CARD - PESSOA x*/
+
+/* CARD - NEWS */
+.styleCardNews{
+   background-color:white;
+   border: 2.5px solid #f2f2f2;
+   -webkit-box-shadow: 10px 10px 7px -6px rgba(0,0,0,0.4);
+ -moz-box-shadow: 10px 10px 7px -6px rgba(0,0,0,0.4);
+ box-shadow: 10px 10px 7px -6px rgba(0,0,0,0.4);
+}
+.styleCardNews:hover{
+   background-color:white;
+   border: 2.5px solid #2bc09a;
+   -webkit-box-shadow: 10px 10px 7px -6px rgba(0,0,0,0.4);
+ -moz-box-shadow: 10px 10px 7px -6px rgba(0,0,0,0.4);
+ box-shadow: 10px 10px 7px -6px rgba(0,0,0,0.4);
+}
+
+/* X CARD - NEWS X */
+
+/* FRAME - MIDIA */
+.styleFrameMidia{
+    width: 100%;
+    height: 1155px;
+}
+@media screen and (max-width: 767px) and (min-width: 576px){
+  .styleFrameMidia{
+      width: 100%;
+      height: 500px;
+  }
+}
+@media screen and (max-width: 576px) and (min-width: 359px){
+  .styleFrameMidia{
+      width: 100%;
+      height: 300px;
+  }
+}
 
 /* RODAPE */
 .rodape{
