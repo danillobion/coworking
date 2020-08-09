@@ -37,8 +37,8 @@
                                 @csrf
                                 <input type="hidden" id="idProjetoInput" name="idProjeto" value="">
                               </form>
-                              <a class="btn btn-secondary btn-sm" href="{{ route('edit_project', ['idProject'=>$item->id,]) }}" >Editar Projeto</a>
-                              <a class="btn btn-secondary btn-sm" href="{{ route('select_project', ['idProject'=>$item->id,]) }}" >Editar Coo/Mem</a>
+                              <a class="btn btn-secondary btn-sm" href="{{ route('edit_project', ['idProject'=>Crypt::encrypt($item->id),]) }}" >Editar Projeto</a>
+                              <a class="btn btn-secondary btn-sm" href="{{ route('select_project', ['idProject'=>Crypt::encrypt($item->id),]) }}" >Editar Coo/Mem</a>
                               <button class="btn btn-danger btn-sm" id="delete{{$item->id}}" type="button" onclick="deletar({{$item->id}})">Deletar</button>
                           </div>
                         </td>
