@@ -50,7 +50,7 @@ class ProjectController extends Controller
             'imagemCapa'       => $imagemCapa,
           ]);
 
-          return redirect()->route('select_project', ['idProject' => $idProjeto])->with('sucesso', 'Projeto cadastrado com sucesso!');
+          return redirect()->route('select_project', ['idProject' => Crypt::encrypt($request->idProject)])->with('sucesso', 'Projeto cadastrado com sucesso!');
       }else{
           $idProjeto = Project::create([
             'titulo'           => $request->titulo,
@@ -62,13 +62,18 @@ class ProjectController extends Controller
             'user_id'          => Auth::user()->id,
             'imagemCapa'       => "imagemDefault.png",
           ]);
-        return redirect()->route('select_project', ['idProject' => $idProjeto])->with('sucesso', 'Projeto cadastrado com sucesso!');
+        return redirect()->route('select_project', ['idProject' => Crypt::encrypt($request->idProject)])->with('sucesso', 'Projeto cadastrado com sucesso!');
       }
 
   }
   public function editProject(Request $request){
-    $resultado = Project::where('id','=',$request->idProject)->first();
+    if(!is_null(Auth::user())){ //logado
+      // dd($request);
+    $resultado = Project::where('id','=',Crypt::decrypt($request->idProject))->first();
     return view('config/config_project_edit', ['projeto' => $resultado]);
+    }else{
+      return redirect('home');
+    }
   }
   public function updateProject(Request $request){
     // dd($request);
@@ -143,12 +148,16 @@ class ProjectController extends Controller
     return view('config/config_project_create');
   }
   public function selectProjects(Request $request){
-    // dd($request);
-    $resultadoAllCoordenadores = Pessoa::where('tipo','=','Docente')->get();
-    $resultadoAllMembros = Pessoa::get();
-    $resultadoCoordenador = Coordenador::where('project_id','=',$request->idProject)->get();
-    $resultadoMembro = Membro::where('project_id','=',$request->idProject)->get();
-    return view('config/config_project_select', ['idProjeto' => $request->idProject, 'resultadoAllCoordenadores' => $resultadoAllCoordenadores,'resultadoAllMembros' => $resultadoAllMembros,'allCoordenadores' => $resultadoCoordenador, 'allMembros' => $resultadoMembro]);
+    if(!is_null(Auth::user())){ //logado
+      // dd($request);
+      $resultadoAllCoordenadores = Pessoa::where('tipo','=','Docente')->get();
+      $resultadoAllMembros = Pessoa::get();
+      $resultadoCoordenador = Coordenador::where('project_id','=',Crypt::decrypt($request->idProject))->get();
+      $resultadoMembro = Membro::where('project_id','=',Crypt::decrypt($request->idProject))->get();
+      return view('config/config_project_select', ['idProjeto' => Crypt::decrypt($request->idProject), 'resultadoAllCoordenadores' => $resultadoAllCoordenadores,'resultadoAllMembros' => $resultadoAllMembros,'allCoordenadores' => $resultadoCoordenador, 'allMembros' => $resultadoMembro]);
+    }else{ //nao logado
+      return redirect('home');
+    }
   }
   public function portfolio(){
     $resultado = Project::where('status','ilike','Finalizado')->orderBy('created_at', 'desc')->paginate(10);
